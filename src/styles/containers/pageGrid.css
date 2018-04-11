@@ -1,0 +1,36 @@
+.page-grid {
+  height: 100vh;
+  display: block;
+}
+.page-grid-sidebar {
+  width: 260px;
+  height: 100%;
+  background-color: black;
+  display: inline-block;
+  float: left;
+
+}
+.page-grid-layout {
+  width: calc(100% - 260px);
+  height: 100%;
+  display: inline-block;
+}
+
+.page-grid-layout-dashboard{
+  background-color: beige;
+  height: calc(100% - 170px);
+
+}
+
+.page-grid-layout-footer{
+  background-color: darkgray;
+  height: 70px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.page-grid-layout-header{
+  background-color: darkblue;
+  height: 100px
+
+}
