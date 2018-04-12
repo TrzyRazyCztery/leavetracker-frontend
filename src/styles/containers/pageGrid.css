@@ -8,29 +8,29 @@
   background-color: black;
   display: inline-block;
   float: left;
+  position: relative;
 
 }
 .page-grid-layout {
   width: calc(100% - 260px);
   height: 100%;
   display: inline-block;
+  background-color:#eee;
 }
 
 .page-grid-layout-dashboard{
-  background-color: beige;
+
   height: calc(100% - 170px);
 
 }
 
 .page-grid-layout-footer{
-  background-color: darkgray;
   height: 70px;
   position: relative;
   margin-bottom: 0;
 }
 
 .page-grid-layout-header{
-  background-color: darkblue;
   height: 100px
 
 }
