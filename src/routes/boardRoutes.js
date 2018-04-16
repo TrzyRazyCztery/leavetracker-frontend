@@ -6,15 +6,18 @@ import Dashboard from '../components/board/dashboard/Dashboard'
 const boardRoutes = [
   {
     path: "/dashboard",
-    component: Dashboard
+    component: Dashboard,
+    headerName: "Dashboard"
   },
   {
     path: "/useredit",
-    component: UserEdit
+    component: UserEdit,
+    headerName: "User Profile"
   },
   {
     path: "/userinformation",
-    component: UserInformation
+    component: UserInformation,
+    headerName: "User Information"
   }
 ];
 

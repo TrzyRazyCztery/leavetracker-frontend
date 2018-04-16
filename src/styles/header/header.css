@@ -1,3 +1,19 @@
 .header {
-  /*background-color: darkgray;*/
+  height: 80px;
+}
+
+.header-name {
+ font-weight: 300;
+  font-size: 20px;
+  padding-top: 18px;
+  padding-left: 40px;
+  width: 300px;
+  display: inline-block;
+}
+
+.header-toolbar{
+  padding-top: 22px;
+  padding-right: 80px;
+  display: inline-block;
+  float:right;
 }

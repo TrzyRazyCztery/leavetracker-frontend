@@ -1,8 +1,8 @@
-.page-grid {
+.app {
   height: 100vh;
   display: block;
 }
-.page-grid-sidebar {
+.app-sidebar {
   width: 260px;
   height: 100%;
   background-color: black;
@@ -11,26 +11,26 @@
   position: relative;
 
 }
-.page-grid-layout {
+.app-layout {
   width: calc(100% - 260px);
   height: 100%;
   display: inline-block;
   background-color:#eee;
 }
 
-.page-grid-layout-board{
+.app-layout-board{
 
   height: calc(100% - 170px);
 
 }
 
-.page-grid-layout-footer{
+.app-layout-footer{
   height: 70px;
   position: relative;
   margin-bottom: 0;
 }
 
-.page-grid-layout-header{
-  height: 100px
+.app-layout-header{
+  height: 80px
 
 }

@@ -5,8 +5,6 @@ const Footer = () => {
   return(
     <div className="footer">
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
     </div>
   )
 }
