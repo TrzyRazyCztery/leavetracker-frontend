@@ -1,13 +1,12 @@
 import React from 'react'
-import Grid from 'material-ui/Grid'
 import Sidebar from '../components/sidebar/Sidebar'
 import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer'
-import Dashboard from '../components/dashboard/Dashboard'
+import Board from '../components/board/Board'
 import '../styles/containers/pageGrid.css'
 
 
-function PageGrid() {
+const PageGrid = () => {
   return (
     <div className="page-grid">
       <div className="page-grid-sidebar">
@@ -17,8 +16,8 @@ function PageGrid() {
         <div className="page-grid-layout-header">
           <Header/>
         </div>
-        <div className="page-grid-layout-dashboard">
-          <Dashboard/>
+        <div className="page-grid-layout-board">
+          <Board/>
         </div>
         <div className="page-grid-layout-footer">
           <Footer/>
