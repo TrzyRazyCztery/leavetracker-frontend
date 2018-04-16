@@ -4,7 +4,7 @@ import logoImage from "../../assets/img/logo.png";
 import backgroundImage from "../../assets/img/background-1c.jpg"
 
 
-function Sidebar(){
+const Sidebar = () => {
   return(
       <div>
         <div className="sidebar-background-image" style={{backgroundImage: "url(" + backgroundImage + ")",}}>
