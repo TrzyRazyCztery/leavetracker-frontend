@@ -1,0 +1,14 @@
+.login-page {
+
+}
+
+.login-page-login{
+  width: 50%;
+  float: left;
+}
+
+.login-page-register{
+  width: 50%;
+  float: right;
+}
+
