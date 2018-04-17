@@ -1,7 +1,7 @@
 import UserEdit from '../components/board/user/edit/UserEdit'
 import UserInformation from '../components/board/user/information/UserInformation'
 import Dashboard from '../components/board/dashboard/Dashboard'
-import LoginPage from '../components/login/LoginPage'
+import CredentialPage from '../components/board/credentials/CredentialPage'
 
 const boardRoutes = [
   {
@@ -20,8 +20,8 @@ const boardRoutes = [
     headerName: "User Information"
   },
   {
-    path: "/loginpage",
-    component: LoginPage,
+    path: "/credentialpage",
+    component: CredentialPage,
     headerName: "Login Page"
   }
 ];
