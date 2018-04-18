@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a1c87936-88ce-4519-909c-f75a2eb5513d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/registerUserActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/registerUserActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board/credentials/RegistrationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/credentials/RegistrationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board/credentials/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/credentials/RegistrationPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/registerUserReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/registerUserReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -309,16 +305,23 @@
       <workItem from="1523395558298" duration="778000" />
       <workItem from="1523481083809" duration="13150000" />
       <workItem from="1523974071453" duration="14839000" />
-      <workItem from="1524057407971" duration="9986000" />
+      <workItem from="1524057407971" duration="10618000" />
     </task>
+    <task id="LOCAL-00001" summary="redux and actions to handle register user.">
+      <created>1524082710103</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524082710103</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53643000" />
+    <option name="totallyTimeSpent" value="54275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16385669" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -344,6 +347,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="redux and actions to handle register user." />
+    <option name="LAST_COMMIT_MESSAGE" value="redux and actions to handle register user." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
