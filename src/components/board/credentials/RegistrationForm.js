@@ -16,6 +16,7 @@ class RegistrationForm extends Component {
     }
   };
 
+
   handleChange = name => event => {
     let userData = this.state.userData;
     userData[name] = event.target.value;
@@ -25,7 +26,7 @@ class RegistrationForm extends Component {
   };
 
   submit = () => {
-    console.log(this.state.userData);
+    console.log(this.props);
     this.props.registerUser(this.state.userData);
   };
 
@@ -36,49 +37,55 @@ class RegistrationForm extends Component {
 
       <form>
         <TextField
-          error={errors && errors.email}
+          error={Boolean(errors && errors.email)}
           id="regEmail"
-          label={(errors && errors.email) ? errors.email : "E-mail"}
+          label= "E-mail"
           value={this.state.userData.email}
           onChange={this.handleChange('email')}
           margin="normal"
         />
+        {(errors && errors.email) && <div className="error-text">{errors.email} </div>}
         <TextField
-          error={errors && errors.password}
+          error={Boolean(errors && errors.password)}
           id="regPassword"
-          label={(errors && errors.password) ? errors.password : "Password"}
+          label="Password"
           value={this.state.userData.password}
           onChange={this.handleChange('password')}
           type="password"
           margin="normal"
         />
+        {(errors && errors.password) && <div className="error-text">{errors.password} </div>}
         <TextField
-          error={errors && errors.passwordConfirmation}
+          error={Boolean(errors && errors.passwordConfirmation)}
           id="regPasswordConfirmation"
-          label={(errors && errors.passwordConfirmation) ? errors.errors.passwordConfirmation : "Password confirmation"}
+          label= "Password confirmation"
           value={this.state.userData.passwordConfirmation}
           onChange={this.handleChange('passwordConfirmation')}
           margin="normal"
           type="password"
         />
+        {(errors && errors.passwordConfirmation) && <div className="error-text">{errors.passwordConfirmation} </div>}
         <TextField
-          error={errors && errors.name}
+          error={Boolean(errors && errors.name)}
           id="name"
-          label={(errors && errors.name) ? errors.name : "Name"}
+          label="Name"
           value={this.state.userData.name}
           onChange={this.handleChange('name')}
           margin="normal"
         />
+        {(errors && errors.name) && <div className="error-text">{errors.name} </div>}
         <TextField
-          error={errors && errors.surname}
+          error={Boolean(errors && errors.surname)}
           id="surname"
-          label={(errors && errors.surname) ? errors.surname : "Surname" }
+          label="Surname"
           value={this.state.userData.surname}
           onChange={this.handleChange('surname')}
           margin="normal"
         />
-
-        <Button onClick={this.submit} style={{ backgroundColor: colors['mainColor']} } variant="raised" color="primary"> Sign </Button>
+        {(errors && errors.surname) && <div className="error-text">{errors.surname} </div>}
+        <div style={{paddingBottom: '30px', paddingTop: '20px'}}>
+          <Button onClick={this.submit} style={{ backgroundColor: colors['mainColor']} } variant="raised" color="primary"> Sign </Button>
+        </div>
 
       </form>
     )

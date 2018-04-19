@@ -5,15 +5,12 @@ import App from './App'
 import { BrowserRouter, Route } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk'
-import {createStore, applyMiddleware} from 'redux'
+import configureStore from './store/configureStore'
 
-const store = createStore(
-  (state = {}) => state,
-  applyMiddleware(thunk)
-)
+
 
 ReactDOM.render((
-  <Provider store={store}>
+  <Provider store={configureStore({})}>
     <BrowserRouter>
       <Route path="/" component={App} />
     </BrowserRouter>

@@ -1,10 +1,13 @@
 import * as types from '../actions/actionTypes';
 
 export function getErrors(state) {
-  return state.registrationErrors
+  console.log("getErrors", state)
+  return state.registerUserReducer.registrationErrors
 }
 
-function registerUserReducer(state = [], action){
+function registerUserReducer(state = {}, action){
+  console.log("reducer state", state);
+  console.log("reducer action", action);
   switch(action.type){
     case types.REGISTER_USER_SUCCESS:
       return state;
