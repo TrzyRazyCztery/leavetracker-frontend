@@ -17,7 +17,6 @@ class RegistrationForm extends Component {
   };
 
   validateInput = inputFieldName => {
-    console.log("validate input", inputFieldName);
     return registerFormValidator(this.state.userData, inputFieldName);
   };
 
@@ -30,7 +29,6 @@ class RegistrationForm extends Component {
   };
 
   submit = () => {
-    console.log(this.props);
     this.props.registerUser(this.state.userData);
   };
 

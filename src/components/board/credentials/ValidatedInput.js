@@ -14,9 +14,7 @@ class ValidatedInput extends Component {
   };
 
   validateInput = () => {
-    const a = Boolean(this.props.inputValidator(this.props.value));
-    console.log(a)
-    return a;
+    return this.props.inputValidator(this.props.name);
   };
 
 
@@ -25,7 +23,7 @@ class ValidatedInput extends Component {
     return(
       <div>
         <TextField
-          error={this.validateInput()}
+          error={this.state.dirty && this.validateInput()}
           id={"reg" + name}
           label= {label}
           value={value}
@@ -33,7 +31,7 @@ class ValidatedInput extends Component {
           margin="normal"
           onBlur={this.changeDirty}
         />
-        {Boolean(this.validateInput) && <div className="error-text">{this.validateInput()} </div>}
+        {this.state.dirty && this.validateInput() && <div className="error-text">{this.validateInput()} </div>}
       </div>
     )
   }

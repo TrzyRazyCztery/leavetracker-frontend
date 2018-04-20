@@ -1,21 +1,38 @@
 import * as types from '../actions/actionTypes';
 
 export function getErrors(state) {
-  console.log("getErrors", state)
-  return state.registerUserReducer.registrationErrors
+  return state.registerUserReducer.errors
+}
+export function getEmailAlreadyUsed(state){
+  return state.registerUserReducer.emailAlreadyUsed
 }
 
-function registerUserReducer(state = {}, action){
-  console.log("reducer state", state);
-  console.log("reducer action", action);
+const initialState = {
+  errors: {
+    email: "",
+    password: "",
+    passwordConfirmation: "",
+    name: "",
+    surname: "",
+  },
+  emailAlreadyUsed: false
+};
+
+function registerUserReducer(state = initialState, action){
   switch(action.type){
     case types.REGISTER_USER_SUCCESS:
-      return Object.assign({}, state, {
-        registrationErrors: {}
-      });
+      return state;
     case types.REGISTER_USER_FAILED:
       return Object.assign({}, state, {
-        registrationErrors: action.errors
+        errors: action.errors
+      });
+    case types.EMAIL_IS_FREE:
+      return Object.assign({}, state, {
+        emailAlreadyUsed: false
+      });
+    case types.EMAIL_ALREADY_USED:
+      return Object.assign({}, state, {
+        emailAlreadyUsed: true
       });
     default:
       return state;

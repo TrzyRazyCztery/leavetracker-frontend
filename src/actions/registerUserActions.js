@@ -8,11 +8,24 @@ export function registerUserSuccess() {
 }
 
 export function registerUserFailed(errors) {
-  console.log("action errors", errors);
   return {
     type: types.REGISTER_USER_FAILED, errors
   };
 }
+
+export function emailAlreadyUsed() {
+  return {
+    type: types.EMAIL_ALREADY_USED
+  };
+}
+
+export function emailIsFree() {
+  return {
+    type: types.EMAIL_IS_FREE
+  };
+}
+
+
 
 
 export function registerUser(userData){
@@ -32,6 +45,18 @@ export function registerUser(userData){
       dispatch(registerUserSuccess()) :
       dispatch(registerUserFailed(errors));
   };
+}
+
+export function checkEMailAvailability(emailAddress){
+  return function(dispatch){
+    if (  emailAddress === "foo@bar.pl"
+       || emailAddress === "bar@foo.pl"
+       || emailAddress === "test@test.com"){
+      dispatch(emailAlreadyUsed())
+    }else {
+      dispatch(emailIsFree())
+    }
+  }
 }
 
 

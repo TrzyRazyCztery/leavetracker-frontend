@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import RegistrationForm from './RegistrationForm'
 import '../../../styles/board/credentials/registrationPage.css'
 import {connect} from 'react-redux'
-import {getErrors} from "../../../reducers/registerUserReducer";
-import {registerUser} from "../../../actions/registerUserActions";
+import {getErrors, getEmailAlreadyUsed} from "../../../reducers/registerUserReducer";
+import {registerUser, checkEMailAvailability} from "../../../actions/registerUserActions";
 
 class RegistrationPage extends Component {
 
@@ -14,6 +14,8 @@ class RegistrationPage extends Component {
         <RegistrationForm
           registerUser = {this.props.registerUser}
           errors = {this.props.errors}
+          emailAlreadyUsed = {this.props.emailAlreadyUsed}
+          checkEmailAvailability = {this.props.checkEmailAvailability}
         />
       </div>
     );
@@ -21,9 +23,9 @@ class RegistrationPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("mapstate", state)
   return {
-    errors: getErrors(state)
+    errors: getErrors(state),
+    emailAlreadyUsed: getEmailAlreadyUsed(state)
   }
 };
 
@@ -31,6 +33,9 @@ const mapDispatchToProps = (dispatch) =>  {
   return {
     registerUser: (userData) => {
       dispatch(registerUser(userData))
+    },
+    checkEmailAvailability: (emailAdress) => {
+      dispatch(checkEMailAvailability(emailAdress))
     }
   }
 };
