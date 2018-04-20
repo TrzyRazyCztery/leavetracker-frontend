@@ -10,7 +10,9 @@ function registerUserReducer(state = {}, action){
   console.log("reducer action", action);
   switch(action.type){
     case types.REGISTER_USER_SUCCESS:
-      return state;
+      return Object.assign({}, state, {
+        registrationErrors: {}
+      });
     case types.REGISTER_USER_FAILED:
       return Object.assign({}, state, {
         registrationErrors: action.errors

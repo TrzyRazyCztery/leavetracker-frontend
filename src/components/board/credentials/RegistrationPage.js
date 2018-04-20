@@ -21,6 +21,7 @@ class RegistrationPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log("mapstate", state)
   return {
     errors: getErrors(state)
   }
