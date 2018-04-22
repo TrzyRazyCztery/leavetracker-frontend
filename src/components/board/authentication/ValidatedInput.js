@@ -13,17 +13,13 @@ class ValidatedInput extends Component {
     })
   };
 
-  validateInput = () => {
-    return this.props.inputValidator(this.props.name);
-  };
-
-
   render(){
-    const {name, label, handleChange, value} = this.props;
+    const {error, type, name, label, handleChange, value} = this.props;
     return(
       <div>
         <TextField
-          error={this.state.dirty && this.validateInput()}
+          error={this.state.dirty && Boolean(error)}
+          type={type}
           id={"reg" + name}
           label= {label}
           value={value}
@@ -31,11 +27,10 @@ class ValidatedInput extends Component {
           margin="normal"
           onBlur={this.changeDirty}
         />
-        {this.state.dirty && this.validateInput() && <div className="error-text">{this.validateInput()} </div>}
+        {this.state.dirty && Boolean(error) && <div className="error-text">{error} </div>}
       </div>
     )
   }
-
 }
 
 export default ValidatedInput;

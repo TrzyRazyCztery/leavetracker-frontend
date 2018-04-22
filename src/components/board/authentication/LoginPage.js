@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import LoginForm from './LoginForm'
-import '../../../styles/board/credentials/loginPage.css'
-import colors from '../../../variables/colors/colors';
+import '../../../styles/board/authentication/loginPage.css'
 
 class LoginPage extends Component {
 

@@ -3,9 +3,6 @@ import * as types from '../actions/actionTypes';
 export function getErrors(state) {
   return state.registerUserReducer.errors
 }
-export function getEmailAlreadyUsed(state){
-  return state.registerUserReducer.emailAlreadyUsed
-}
 
 const initialState = {
   errors: {
@@ -13,9 +10,8 @@ const initialState = {
     password: "",
     passwordConfirmation: "",
     name: "",
-    surname: "",
+    surname: ""
   },
-  emailAlreadyUsed: false
 };
 
 function registerUserReducer(state = initialState, action){
@@ -26,13 +22,9 @@ function registerUserReducer(state = initialState, action){
       return Object.assign({}, state, {
         errors: action.errors
       });
-    case types.EMAIL_IS_FREE:
+    case types.VALIDATED_FORM:
       return Object.assign({}, state, {
-        emailAlreadyUsed: false
-      });
-    case types.EMAIL_ALREADY_USED:
-      return Object.assign({}, state, {
-        emailAlreadyUsed: true
+        errors: action.errors
       });
     default:
       return state;

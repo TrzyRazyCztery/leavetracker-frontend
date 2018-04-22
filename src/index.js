@@ -4,7 +4,6 @@ import './index.css';
 import App from './App'
 import { BrowserRouter, Route } from 'react-router-dom';
 import {Provider} from 'react-redux';
-import thunk from 'redux-thunk'
 import configureStore from './store/configureStore'
 
 

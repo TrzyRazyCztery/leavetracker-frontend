@@ -1,24 +1,15 @@
 import React from 'react';
 import '../../styles/header/header.css'
-import boardRoutes from '../../routes/boardRoutes';
 import Button from 'material-ui/Button'
 import colors from '../../variables/colors/colors';
+import {Link} from 'react-router-dom';
 
-const headerName = (location) => {
-  const route = boardRoutes.find((route) => {
-    return route.path === location.pathname
-  });
-  return (route === undefined) ? "" : route.headerName;
-};
 
-const Header = (props) => {
+const Header = () => {
   return (
       <div className="header">
-        {/*<div className="header-name">*/}
-          {/*{headerName(props.location)}*/}
-        {/*</div>*/}
         <div className="header-toolbar">
-          <Button style={{backgroundColor: colors['mainColor']}} variant="raised" color="primary"> Login </Button>
+          <Link to='/authentication'><Button style={{backgroundColor: colors['mainColor'], textDecoration: 'none'}} variant="raised" color="primary"> Login </Button></Link>
         </div>
       </div>
   )

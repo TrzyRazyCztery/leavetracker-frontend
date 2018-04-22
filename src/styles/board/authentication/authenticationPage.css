@@ -1,4 +1,4 @@
-.credential-page {
+.authentication-page {
   display: table;
   width: 800px;
   height: 80%;
@@ -6,20 +6,20 @@
   padding-top: 70px;
 }
 
-.credential-page-login{
+.authentication-page-login{
   display: table-cell;
   width: 399px;
 
 
 }
 
-.credential-page-separator{
+.authentication-page-separator{
   display: table-cell;
   width: 2px;
   background-color: rgba(180, 180, 180, 0.3);
 }
 
-.credential-page-register{
+.authentication-page-register{
   display: table-cell;
   width: 399px;
 }
