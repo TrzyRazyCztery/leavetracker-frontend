@@ -1,7 +1,7 @@
-import UserEdit from '../components/board/user/edit/UserEdit'
-import UserInformation from '../components/board/user/information/UserInformation'
-import Dashboard from '../components/board/dashboard/Dashboard'
-import AutenticationPage from '../components/board/authentication/AutenticationPage'
+import UserEdit from '../userEdit/components/UserEdit'
+import UserInformation from '../userInformation/components/UserInformation'
+import Dashboard from '../dashboard/components/Dashboard'
+import AutenticationPage from '../layout/components/AutenticationPage'
 
 const boardRoutes = [
   {
