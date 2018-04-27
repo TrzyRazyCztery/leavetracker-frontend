@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TextField from "material-ui/TextField";
+//import validatedInput from "../../shared/components/validatedInput"
 import colors from "../../variables/colors";
 import Button from "material-ui/Button";
 class LoginForm extends Component {

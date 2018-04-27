@@ -21,7 +21,7 @@ class RegistrationForm extends Component {
     }
   };
 
-  validateInput = name => {
+  validateInput = () => {
     const { userData } = this.state;
     const errors = Object.assign(
       {},
@@ -63,7 +63,7 @@ class RegistrationForm extends Component {
           name="email"
           label="E-mail"
           hasErrors={!!errors.email}
-          error={errors.email}
+          errors={errors.email}
           handleChange={this.handleChange}
           value={userData.email}
         />
@@ -72,7 +72,7 @@ class RegistrationForm extends Component {
           name="password"
           label="Password"
           hasErrors={!!errors.password}
-          error={errors.password}
+          errors={errors.password}
           handleChange={this.handleChange}
           value={userData.password}
         />
@@ -81,7 +81,7 @@ class RegistrationForm extends Component {
           name="passwordConfirmation"
           label="Password confirmation"
           hasErrors={!!errors.passwordConfirmation}
-          error={errors.passwordConfirmation}
+          errors={errors.passwordConfirmation}
           handleChange={this.handleChange}
           value={userData.passwordConfirmation}
         />
@@ -90,7 +90,7 @@ class RegistrationForm extends Component {
           name="name"
           label="Name"
           hasErrors={!!errors.name}
-          error={errors.name}
+          errors={errors.name}
           handleChange={this.handleChange}
           value={userData.name}
         />
@@ -98,7 +98,7 @@ class RegistrationForm extends Component {
           type="text"
           name="surname"
           label="Surname"
-          error={errors.surname}
+          errors={errors.surname}
           hasErrors={!!errors.surname}
           handleChange={this.handleChange}
           value={userData.surname}
