@@ -1,0 +1,14 @@
+.registration-page{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.registration-page h2{
+color: #00acc1
+}
+
+.error-text {
+  color: red;
+  font-size: 9px;
+}

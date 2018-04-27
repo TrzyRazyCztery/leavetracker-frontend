@@ -1,0 +1,26 @@
+.authentication-page {
+  display: table;
+  width: 800px;
+  height: 80%;
+  margin: 0 auto ;
+  padding-top: 70px;
+}
+
+.authentication-page-login{
+  display: table-cell;
+  width: 399px;
+
+
+}
+
+.authentication-page-separator{
+  display: table-cell;
+  width: 2px;
+  background-color: rgba(180, 180, 180, 0.3);
+}
+
+.authentication-page-register{
+  display: table-cell;
+  width: 399px;
+}
+
