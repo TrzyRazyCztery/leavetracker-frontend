@@ -1,14 +1,11 @@
 .sidebar {
   /*background-color: black;*/
   /*height: 100vh;*/
-
 }
 
-.logo{
-
+.logo {
   height: 80px;
   z-index: 2;
-
 }
 
 .logo:after {
@@ -19,10 +16,10 @@
   height: 1px;
   right: 15px;
   width: calc(100% - 30px);
-  background-color: rgba(180, 180, 180, 0.3)
+  background-color: rgba(180, 180, 180, 0.3);
 }
 
-.logo-image{
+.logo-image {
   padding-top: 20px;
   padding-left: 10px;
   width: 200px;

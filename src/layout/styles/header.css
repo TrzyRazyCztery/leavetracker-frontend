@@ -3,7 +3,7 @@
 }
 
 .header-name {
- font-weight: 300;
+  font-weight: 300;
   font-size: 20px;
   padding-top: 18px;
   padding-left: 40px;
@@ -11,14 +11,13 @@
   display: inline-block;
 }
 
-.header-toolbar{
+.header-toolbar {
   padding-top: 15px;
   padding-right: 80px;
   display: inline-block;
-  float:right;
+  float: right;
 }
 
 a {
   text-decoration: none;
 }
-

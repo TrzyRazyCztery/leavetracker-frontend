@@ -9,28 +9,24 @@
   display: inline-block;
   float: left;
   position: relative;
-
 }
 .app-layout {
   width: calc(100% - 260px);
   height: 100%;
   display: inline-block;
-  background-color:#eee;
+  background-color: #eee;
 }
 
-.app-layout-board{
-
+.app-layout-board {
   height: calc(100% - 170px);
-
 }
 
-.app-layout-footer{
+.app-layout-footer {
   height: 70px;
   position: relative;
   margin-bottom: 0;
 }
 
-.app-layout-header{
-  height: 80px
-
+.app-layout-header {
+  height: 80px;
 }

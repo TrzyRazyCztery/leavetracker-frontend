@@ -3,11 +3,13 @@ import Sidebar from './Sidebar'
 import Header from './Header'
 import Footer from './Footer'
 import Board from './Board'
-import '../styles/App.css'
+import '../styles/app.css'
+import Notifications from '../../shared/components/Notifications'
 
 const App = (props) => {
   return (
       <div className="app">
+        <Notifications />
         <div className="app-sidebar">
           <Sidebar/>
         </div>

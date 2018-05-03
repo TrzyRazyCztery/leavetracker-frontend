@@ -1,7 +1,7 @@
-import UserEdit from '../userEdit/components/UserEdit'
-import UserInformation from '../userInformation/components/UserInformation'
-import Dashboard from '../dashboard/components/Dashboard'
-import AutenticationPage from '../layout/components/AutenticationPage'
+import UserEdit from "../userEdit/components/UserEdit";
+import UserInformation from "../userInformation/components/UserInformation";
+import Dashboard from "../dashboard/components/Dashboard";
+import SignPage from "../layout/components/SignPage";
 
 const boardRoutes = [
   {
@@ -20,9 +20,9 @@ const boardRoutes = [
     headerName: "User Information"
   },
   {
-    path: "/authentication",
-    component: AutenticationPage,
-    headerName: "Login Page"
+    path: "/sign",
+    component: SignPage,
+    headerName: "Sign"
   }
 ];
 

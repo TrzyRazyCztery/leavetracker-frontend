@@ -1,26 +1,23 @@
-.authentication-page {
+.sign-page {
   display: table;
   width: 800px;
   height: 80%;
-  margin: 0 auto ;
+  margin: 0 auto;
   padding-top: 70px;
 }
 
-.authentication-page-login{
+.sign-page-login {
   display: table-cell;
   width: 399px;
-
-
 }
 
-.authentication-page-separator{
+.sign-page-separator {
   display: table-cell;
   width: 2px;
   background-color: rgba(180, 180, 180, 0.3);
 }
 
-.authentication-page-register{
+.sign-page-register {
   display: table-cell;
   width: 399px;
 }
-
