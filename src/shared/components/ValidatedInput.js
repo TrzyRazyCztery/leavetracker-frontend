@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
-import TextField from 'material-ui/TextField'
+import React, { Component } from "react";
+import TextField from "material-ui/TextField";
 
 class ValidatedInput extends Component {
-
   state = {
     dirty: false
   };
@@ -10,26 +9,33 @@ class ValidatedInput extends Component {
   changeDirty = () => {
     this.setState({
       dirty: true
-    })
+    });
   };
 
-  render(){
-    const {errors, type, name, label, handleChange, hasErrors, value} = this.props;
-    return(
+  fieldId = () => this.props.formName + "-" + this.props.name;
+
+  errorsPresent = () => !!this.props.errors && this.props.errors.length > 0;
+
+  render() {
+    const { errors, type, name, label, handleChange, value } = this.props;
+    return (
       <div>
         <TextField
-          error={this.state.dirty && hasErrors}
+          error={this.state.dirty && this.errorsPresent()}
           type={type}
-          id={"reg" + name}
-          label= {label}
+          id={this.fieldId()}
+          label={label}
           value={value}
           onChange={handleChange(name)}
           margin="normal"
           onBlur={this.changeDirty}
         />
-        {this.state.dirty && hasErrors && <div className="error-text">{errors[0]} </div>}
+        {this.state.dirty &&
+          this.errorsPresent() && (
+            <div className="error-text">{errors[0]} </div>
+          )}
       </div>
-    )
+    );
   }
 }
 

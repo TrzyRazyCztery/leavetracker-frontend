@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import _ from "lodash";
 import Button from "material-ui/Button";
-import colors from "../../variables/colors";
 import ValidatedInput from "../../shared/components/ValidatedInput";
 import {
   validateEmail,
@@ -20,6 +20,9 @@ class RegistrationForm extends Component {
       surname: ""
     }
   };
+
+  submitAvailable = () =>
+    _.reduce(this.state.userData, (result, field) => result && !!field, true);
 
   validateInput = () => {
     const { userData } = this.state;
@@ -62,7 +65,6 @@ class RegistrationForm extends Component {
           type="text"
           name="email"
           label="E-mail"
-          hasErrors={!!errors.email}
           errors={errors.email}
           handleChange={this.handleChange}
           value={userData.email}
@@ -71,7 +73,6 @@ class RegistrationForm extends Component {
           type="password"
           name="password"
           label="Password"
-          hasErrors={!!errors.password}
           errors={errors.password}
           handleChange={this.handleChange}
           value={userData.password}
@@ -80,7 +81,6 @@ class RegistrationForm extends Component {
           type="password"
           name="passwordConfirmation"
           label="Password confirmation"
-          hasErrors={!!errors.passwordConfirmation}
           errors={errors.passwordConfirmation}
           handleChange={this.handleChange}
           value={userData.passwordConfirmation}
@@ -89,7 +89,6 @@ class RegistrationForm extends Component {
           type="text"
           name="name"
           label="Name"
-          hasErrors={!!errors.name}
           errors={errors.name}
           handleChange={this.handleChange}
           value={userData.name}
@@ -99,16 +98,15 @@ class RegistrationForm extends Component {
           name="surname"
           label="Surname"
           errors={errors.surname}
-          hasErrors={!!errors.surname}
           handleChange={this.handleChange}
           value={userData.surname}
         />
-        <div style={{ paddingBottom: "30px", paddingTop: "20px" }}>
+        <div className="sign-button">
           <Button
             onClick={this.submit}
-            style={{ backgroundColor: colors["mainColor"] }}
             variant="raised"
             color="primary"
+            disabled={!this.submitAvailable()}
           >
             {" Sign "}
           </Button>

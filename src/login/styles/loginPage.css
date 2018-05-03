@@ -4,6 +4,15 @@
   text-align: center;
 }
 
-.login-page h2{
+.login-page h2 {
   color: #00acc1;
+}
+
+.login-page button {
+  background-color: #00acc1;
+}
+
+.login-button {
+  padding-bottom: 30px;
+  padding-top: 20px;
 }

@@ -2,6 +2,7 @@ import { createActionNamespace } from "../utils/actions";
 
 //Action Types
 const registerUserAction = createActionNamespace("registerUser");
+
 export const REGISTER_USER_SUCCESS = registerUserAction(
   "REGISTER_USER_SUCCESS"
 );
@@ -19,7 +20,7 @@ const initialState = {
 const registerUserReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTER_USER_SUCCESS:
-      return state;
+      return Object.assign({}, state);
     case REGISTER_USER_FAILED:
       return Object.assign({}, state, {
         errors: action.errors
