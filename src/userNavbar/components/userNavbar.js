@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React from "react";
-import { getAuthenticatedUser } from "../../reducers/authorizationDataReducer";
-import { logoutUser } from "../../shared/actions/authorizationDataActions";
+import { getAuthenticatedUser } from "src/reducers/authorizationDataReducer";
+import { logoutUser } from "src/shared/actions/authorizationDataActions";
 
 const userNavbar = ({ user, logout }) => (
   <div>

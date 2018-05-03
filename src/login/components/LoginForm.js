@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from "material-ui/Button";
 import { CircularProgress } from "material-ui/Progress";
-import ValidatedInput from "../../shared/components/ValidatedInput";
+import ValidatedInput from "src/shared/components/ValidatedInput";
 import _ from "lodash";
 
 class LoginForm extends Component {

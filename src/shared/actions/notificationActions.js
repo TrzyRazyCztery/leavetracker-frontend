@@ -3,7 +3,7 @@ import {
   NOTIFIED_SUCCESS,
   NOTIFIED_INFO,
   NOTIFIED_WARNING
-} from "../../reducers/notificationReducer";
+} from "src/reducers/notificationReducer";
 
 const NotifiedWarning = message => ({ type: NOTIFIED_WARNING, message });
 const NotifiedError = message => ({ type: NOTIFIED_ERROR, message });

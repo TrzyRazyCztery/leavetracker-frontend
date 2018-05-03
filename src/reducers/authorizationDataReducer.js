@@ -1,5 +1,5 @@
-import { createActionNamespace } from "../utils/actions";
-import { LOGIN_USER_SUCCESS } from "./loginUserReducer";
+import { createActionNamespace } from "src/utils/actions";
+import { LOGIN_USER_SUCCESS } from "src/reducers/loginUserReducer";
 //Action Types
 const authorizationDataAction = createActionNamespace("authorizationData");
 

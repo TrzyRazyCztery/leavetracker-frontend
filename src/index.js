@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./layout/components/App";
+import "src/index.css";
+import App from "src/layout/components/App";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import configureStore from "./store/configureStore";
-import { configureFakeBackend } from "./helpers/fakeBackend";
-import { copyAuthorizationDataFromStorage } from "./shared/actions/authorizationDataActions";
+import configureStore from "src/store/configureStore";
+import { configureFakeBackend } from "src/helpers/fakeBackend";
+import { copyAuthorizationDataFromStorage } from "src/shared/actions/authorizationDataActions";
 
 configureFakeBackend();
 const store = configureStore();

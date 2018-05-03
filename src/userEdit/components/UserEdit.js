@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/userEdit.css";
+import "src/userInformation/styles/userEdit.css";
 
 const UserEdit = () => {
   return <div>USER EDIT PAGE</div>;

@@ -2,11 +2,11 @@ import {
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILED,
   SAVED_FORM_ERRORS
-} from "../../reducers/registerUserReducer";
+} from "src/reducers/registerUserReducer";
 import {
   notifySuccess,
   notifyError
-} from "../../shared/actions/notificationActions";
+} from "src/shared/actions/notificationActions";
 
 const registerUserSuccess = () => ({ type: REGISTER_USER_SUCCESS });
 const registerUserFailed = errors => ({

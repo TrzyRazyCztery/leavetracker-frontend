@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import Button from "material-ui/Button";
-import ValidatedInput from "../../shared/components/ValidatedInput";
+import ValidatedInput from "src/shared/components/ValidatedInput";
 import {
   validateEmail,
   validateName,
   validatePassword,
   validatePasswordConfirmation,
   validateSurname
-} from "../../utils/validator";
+} from "src/utils/validator";
 
 class RegistrationForm extends Component {
   state = {
