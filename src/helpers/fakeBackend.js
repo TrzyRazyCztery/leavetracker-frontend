@@ -1,26 +1,6 @@
-const users = [
-  {
-    email: "foo@bar.com",
-    password: "123456",
-    id: 1,
-    name: "Foo",
-    surname: "Bar"
-  },
-  {
-    email: "temp@temp.pl",
-    password: "zxcvbnm",
-    id: 2,
-    name: "Temp",
-    surname: "Temp"
-  },
-  {
-    email: "john.smith@yahoo.com",
-    password: "password",
-    id: 3,
-    name: "John",
-    surname: "Smith"
-  }
-];
+import {storageAdapter} from "../utils/adapters";
+
+const users = storageAdapter.load('users') || [];
 
 export const configureFakeBackend = () => {
   window.fetch = function(url, opts) {
@@ -70,8 +50,8 @@ export const configureFakeBackend = () => {
           }
 
           newUser.id = Math.max(...users.map(user => user.id)) + 1;
-          users.push(newUser);
-          localStorage.setItem("users", JSON.stringify(users));
+          const users = users.concat(newUser);
+          storageAdapter.store('users', users);
           resolve({ ok: true, json: () => ({registerSuccess: true}) });
         }
       }, 2500);

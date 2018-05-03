@@ -22,13 +22,13 @@ export const registerUser = userData => dispatch => {
     body: JSON.stringify(userData)
   })
     .then(response => {
-      const response_in_json = response.json();
-      if (response_in_json.registerSuccess) {
-        const userData = response_in_json.user;
+      const responseInJson = response.json();
+      if (responseInJson.registerSuccess) {
+        const userData = responseInJson.user;
         dispatch(registerUserSuccess(userData));
         dispatch(notifySuccess(`Register success!`));
       } else {
-        dispatch(registerUserFailed(response_in_json.errors));
+        dispatch(registerUserFailed(responseInJson.errors));
         dispatch(notifyError("login failed"));
       }
     })

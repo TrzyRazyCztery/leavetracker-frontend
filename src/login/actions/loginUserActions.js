@@ -21,15 +21,15 @@ export const loginUser = (history, loginData) => dispatch => {
     body: JSON.stringify(loginData)
   })
     .then(response => {
-      const response_in_json = response.json();
-      if (response_in_json.loginSuccess) {
-        const userData = response_in_json.user;
+      const responseInJson = response.json();
+      if (responseInJson.loginSuccess) {
+        const userData = responseInJson.user;
         dispatch(loginUserSuccess(userData));
         history.push("/");
         dispatch(notifySuccess(`Hello ${userData.name}, You are logged in!`));
         storageAdapter.store("user", userData);
       } else {
-        dispatch(loginUserFailed(response_in_json.errors));
+        dispatch(loginUserFailed(responseInJson.errors));
         dispatch(notifyError("login failed"));
       }
     })
