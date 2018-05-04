@@ -41,9 +41,7 @@ class RegistrationForm extends Component {
   };
 
   handleChange = name => event => {
-    const userData = Object.assign({}, this.state.userData, {
-      [name]: event.target.value
-    });
+    const userData = {...this.state.userData, [name]: event.target.value }
     this.setState(
       {
         userData: userData

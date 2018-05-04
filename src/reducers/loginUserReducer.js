@@ -21,14 +21,15 @@ const initialState = {
 const loginUserReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER_REQUESTED:
-      return Object.assign({}, state, { pendingLoginRequest: true });
+      return { ...state, pendingLoginRequest: true };
     case LOGIN_USER_SUCCESS:
-      return Object.assign({}, state, { pendingLoginRequest: false });
+      return { ...state, pendingLoginRequest: false };
     case LOGIN_USER_FAILED:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         pendingLoginRequest: false,
         errors: action.errors
-      });
+      };
     default:
       return state;
   }

@@ -16,9 +16,7 @@ class LoginForm extends Component {
     _.reduce(this.state.loginData, (result, field) => result && !!field, true);
 
   handleChange = name => event => {
-    const loginData = Object.assign({}, this.state.loginData, {
-      [name]: event.target.value
-    });
+    const loginData = { ...this.state.loginData, [name]: event.target.value}
     this.setState({
       loginData: loginData
     });

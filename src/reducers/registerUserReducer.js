@@ -20,15 +20,11 @@ const initialState = {
 const registerUserReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTER_USER_SUCCESS:
-      return Object.assign({}, state);
+      return state;
     case REGISTER_USER_FAILED:
-      return Object.assign({}, state, {
-        errors: action.errors
-      });
+      return {...state, errors: action.errors };
     case SAVED_FORM_ERRORS:
-      return Object.assign({}, state, {
-        errors: action.errors
-      });
+      return {...state, errors: action.errors };
     default:
       return state;
   }

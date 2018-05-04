@@ -21,11 +21,11 @@ const initialState = {
 const authorizationDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case SAVED_AUTHORIZATION_DATA:
-      return Object.assign({}, state, { user: action.userData });
+      return { ...state, user: action.userData };
     case LOGIN_USER_SUCCESS:
-      return Object.assign({}, state, { user: action.userData });
+      return { ...state, user: action.userData };
     case REMOVED_AUTHORIZATION_DATA:
-      return Object.assign({}, state, { user: null });
+      return { ...state, user: null };
     default:
       return state;
   }
