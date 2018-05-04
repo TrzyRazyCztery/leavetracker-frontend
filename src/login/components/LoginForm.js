@@ -17,9 +17,7 @@ class LoginForm extends Component {
 
   handleChange = name => event => {
     const loginData = { ...this.state.loginData, [name]: event.target.value}
-    this.setState({
-      loginData: loginData
-    });
+    this.setState({ loginData });
   };
 
   render() {

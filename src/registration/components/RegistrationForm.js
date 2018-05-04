@@ -43,9 +43,7 @@ class RegistrationForm extends Component {
   handleChange = name => event => {
     const userData = {...this.state.userData, [name]: event.target.value }
     this.setState(
-      {
-        userData: userData
-      },
+      { userData },
       this.validateInput
     );
   };
