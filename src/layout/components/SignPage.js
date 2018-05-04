@@ -1,6 +1,6 @@
 import React from "react";
 import "layout/styles/signPage.css";
-import LoginPage from "login/components/LoginPage";
+import LogInPage from "logIn/components/LogInPage";
 import Paper from "material-ui/Paper";
 import RegistrationPage from "registration/components/RegistrationPage";
 
@@ -9,7 +9,7 @@ const SignPage = props => {
     <div className="sign-page">
       <Paper elevation={8}>
         <div className="sign-page-login">
-          <LoginPage {...props} />
+          <LogInPage {...props} />
         </div>
         <div className="sign-page-separator" />
         <div className="sign-page-register">

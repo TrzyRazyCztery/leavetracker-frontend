@@ -21,7 +21,7 @@ const Header = () => {
         <Unauthenticated>
           <Link to="/sign">
             <Button style={buttonStyle} variant="raised" color="primary">
-              Login
+              LogIn
             </Button>
           </Link>
         </Unauthenticated>

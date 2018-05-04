@@ -29,7 +29,7 @@ export const registerUser = userData => dispatch => {
         dispatch(notifySuccess(`Register success!`));
       } else {
         dispatch(registerUserFailed(responseInJson.errors));
-        dispatch(notifyError("login failed"));
+        dispatch(notifyError("log in failed"));
       }
     })
     .catch(err => {

@@ -15,7 +15,7 @@ export const configureFakeBackend = () => {
           if (filteredUsers.length) {
             let user = filteredUsers[0];
             let responseJson = {
-              loginSuccess: true,
+              logInSuccess: true,
               user: {
                 id: user.id,
                 email: user.email,
@@ -28,7 +28,7 @@ export const configureFakeBackend = () => {
           } else {
             resolve({
               json: () => ({
-                loginSuccess: false,
+                logInSuccess: false,
                 errors: ["Username or password is incorrect"]
               })
             });
