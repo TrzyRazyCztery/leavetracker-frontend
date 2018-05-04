@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import LoginForm from "src/login/components/LoginForm";
-import "src/login/styles/loginPage.css";
-import { loginUser } from "src/login/actions/loginUserActions";
+import LoginForm from "login/components/LoginForm";
+import "login/styles/loginPage.css";
+import { loginUser } from "login/actions/loginUserActions";
 import { connect } from "react-redux";
 import {
   getErrors,
   getLoginRequestStatus
-} from "src/reducers/loginUserReducer";
+} from "reducers/loginUserReducer";
 
 class LoginPage extends Component {
   render() {

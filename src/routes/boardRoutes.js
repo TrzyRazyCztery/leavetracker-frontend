@@ -1,7 +1,7 @@
-import UserEdit from "src/userEdit/components/UserEdit";
-import UserInformation from "src/userInformation/components/UserInformation";
-import Dashboard from "src/dashboard/components/Dashboard";
-import SignPage from "src/layout/components/SignPage";
+import UserEdit from "userEdit/components/UserEdit";
+import UserInformation from "userInformation/components/UserInformation";
+import Dashboard from "dashboard/components/Dashboard";
+import SignPage from "layout/components/SignPage";
 
 const boardRoutes = [
   {

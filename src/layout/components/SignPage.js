@@ -1,8 +1,8 @@
 import React from "react";
-import "src/layout/styles/signPage.css";
-import LoginPage from "src/login/components/LoginPage";
+import "layout/styles/signPage.css";
+import LoginPage from "login/components/LoginPage";
 import Paper from "material-ui/Paper";
-import RegistrationPage from "src/registration/components/RegistrationPage";
+import RegistrationPage from "registration/components/RegistrationPage";
 
 const SignPage = props => {
   return (

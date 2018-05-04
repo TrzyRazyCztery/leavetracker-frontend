@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import registerUserReducer from "src/reducers/registerUserReducer";
-import loginUserReducer from "src/reducers/loginUserReducer";
-import notificationReducer from "src/reducers/notificationReducer";
-import authorizationDataReducer from "src/reducers/authorizationDataReducer";
+import registerUserReducer from "reducers/registerUserReducer";
+import loginUserReducer from "reducers/loginUserReducer";
+import notificationReducer from "reducers/notificationReducer";
+import authorizationDataReducer from "reducers/authorizationDataReducer";
 
 const rootReducer = combineReducers({
   registerUserReducer,

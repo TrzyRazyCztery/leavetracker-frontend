@@ -1,7 +1,7 @@
 import React from "react";
-import "src/layout/styles/board.css";
+import "layout/styles/board.css";
 import { Switch, Route } from "react-router-dom";
-import boardRoutes from "src/routes/boardRoutes";
+import boardRoutes from "routes/boardRoutes";
 
 const Board = () => {
   return (

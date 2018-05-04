@@ -1,4 +1,4 @@
-import { createActionNamespace } from "src/utils/actions";
+import { createActionNamespace } from "utils/actions";
 
 //Action Types
 const registerUserAction = createActionNamespace("registerUser");

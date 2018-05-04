@@ -1,6 +1,5 @@
-import {storageAdapter} from "../utils/adapters";
-
-const users = storageAdapter.load('users') || [];
+import { storageAdapter } from "../utils/adapters";
+let users = storageAdapter.load("users") || [];
 
 export const configureFakeBackend = () => {
   window.fetch = function(url, opts) {
@@ -8,13 +7,11 @@ export const configureFakeBackend = () => {
       setTimeout(() => {
         if (url.endsWith("/users/authenticate") && opts.method === "POST") {
           let params = JSON.parse(opts.body);
-          console.log("body request", params);
           let filteredUsers = users.filter(user => {
             return (
               user.email === params.email && user.password === params.password
             );
           });
-          console.log("dane: ", params.email, " ", params.password);
           if (filteredUsers.length) {
             let user = filteredUsers[0];
             let responseJson = {
@@ -41,6 +38,7 @@ export const configureFakeBackend = () => {
 
         if (url.endsWith("/users/register") && opts.method === "POST") {
           let newUser = JSON.parse(opts.body);
+          console.log(users);
           let duplicateUser = users.filter(user => {
             return user.email === newUser.email;
           }).length;
@@ -50,9 +48,9 @@ export const configureFakeBackend = () => {
           }
 
           newUser.id = Math.max(...users.map(user => user.id)) + 1;
-          const users = users.concat(newUser);
-          storageAdapter.store('users', users);
-          resolve({ ok: true, json: () => ({registerSuccess: true}) });
+          users = users.concat(newUser);
+          storageAdapter.store("users", users);
+          resolve({ ok: true, json: () => ({ registerSuccess: true }) });
         }
       }, 2500);
     });

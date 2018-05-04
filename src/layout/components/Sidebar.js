@@ -1,7 +1,7 @@
 import React from 'react';
-import "src/layout/styles/sidebar.css"
-import logoImage from "src/assets/img/logo.png";
-import backgroundImage from "src/assets/img/background-1c.jpg"
+import "layout/styles/sidebar.css"
+import logoImage from "assets/img/logo.png";
+import backgroundImage from "assets/img/background-1c.jpg"
 
 
 const Sidebar = () => {

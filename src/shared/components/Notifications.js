@@ -1,7 +1,7 @@
 import React from "react";
 import { ToastContainer } from "react-toastr";
 import { connect } from "react-redux";
-import { getNotification } from "src/reducers/notificationReducer";
+import { getNotification } from "reducers/notificationReducer";
 
 class Notifications extends React.Component {
   componentWillReceiveProps(nextProps) {

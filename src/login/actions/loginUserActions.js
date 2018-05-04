@@ -2,12 +2,12 @@ import {
   LOGIN_USER_REQUESTED,
   LOGIN_USER_FAILED,
   LOGIN_USER_SUCCESS
-} from "src/reducers/loginUserReducer";
+} from "reducers/loginUserReducer";
 import {
   notifySuccess,
   notifyError
-} from "src/shared/actions/notificationActions";
-import { storageAdapter } from "src/utils/adapters";
+} from "shared/actions/notificationActions";
+import { storageAdapter } from "utils/adapters";
 
 const loginUserSuccess = userData => ({ type: LOGIN_USER_SUCCESS, userData });
 const loginUserFailed = errors => ({ type: LOGIN_USER_FAILED, errors });

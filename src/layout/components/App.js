@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from 'src/layout/components/Sidebar'
-import Header from 'src/layout/components/Header'
-import Footer from 'src/layout/components/Footer'
-import Board from 'src/layout/components/Board'
-import 'src/layout/styles/app.css'
-import Notifications from 'src/shared/components/Notifications'
+import Sidebar from 'layout/components/Sidebar'
+import Header from 'layout/components/Header'
+import Footer from 'layout/components/Footer'
+import Board from 'layout/components/Board'
+import 'layout/styles/app.css'
+import Notifications from 'shared/components/Notifications'
 
 const App = (props) => {
   return (
