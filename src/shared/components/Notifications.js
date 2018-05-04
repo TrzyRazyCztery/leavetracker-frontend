@@ -36,4 +36,4 @@ const mapStateToProps = state => ({
   notification: getNotification(state)
 });
 
-export default connect(mapStateToProps, null)(Notifications);
+export default connect(mapStateToProps)(Notifications);
