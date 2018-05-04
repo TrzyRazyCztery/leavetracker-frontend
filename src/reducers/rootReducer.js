@@ -5,10 +5,10 @@ import notificationReducer from "reducers/notificationReducer";
 import authorizationDataReducer from "reducers/authorizationDataReducer";
 
 const rootReducer = combineReducers({
-  registerUserReducer,
-  logInUserReducer,
-  notificationReducer,
-  authorizationDataReducer
+  registerData: registerUserReducer,
+  logInData: logInUserReducer,
+  notifications: notificationReducer,
+  authorizationData: authorizationDataReducer
 });
 
 export default rootReducer;

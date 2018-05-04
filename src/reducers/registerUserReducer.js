@@ -10,7 +10,7 @@ export const REGISTER_USER_FAILED = registerUserAction("REGISTER_USER_FAILED");
 export const SAVED_FORM_ERRORS = registerUserAction("SAVED_FORM_ERRORS");
 
 //Selectors
-export const getErrors = state => state.registerUserReducer.errors;
+export const getErrors = state => state.registerData.errors;
 
 //Reducer
 const initialState = {

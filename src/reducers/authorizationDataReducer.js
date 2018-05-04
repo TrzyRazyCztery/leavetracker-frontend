@@ -11,7 +11,7 @@ export const REMOVED_AUTHORIZATION_DATA = authorizationDataAction(
 );
 //Selectors
 export const getAuthenticatedUser = state =>
-  state.authorizationDataReducer.user;
+  state.authorizationData.user;
 
 //Reducer
 const initialState = {

@@ -8,9 +8,9 @@ export const LOGIN_USER_REQUESTED = logInAction("LOGIN_USER_REQUESTED");
 
 //Selectors
 
-export const getErrors = state => state.logInUserReducer.errors;
+export const getErrors = state => state.logInData.errors;
 export const getLogInRequestStatus = state =>
-  state.logInUserReducer.pendingLogInRequest;
+  state.logInData.pendingLogInRequest;
 
 //Reducer
 const initialState = {

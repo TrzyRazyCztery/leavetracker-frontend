@@ -9,7 +9,7 @@ export const NOTIFIED_SUCCESS = registerNotificationAction("NOTIFIED_SUCCESS");
 export const NOTIFIED_WARNING = registerNotificationAction("NOTIFIED_WARNING");
 
 //Selectors
-export const getNotification = state => state.notificationReducer.notification;
+export const getNotification = state => state.notifications.notification;
 
 //Reducer
 const initialState = {
