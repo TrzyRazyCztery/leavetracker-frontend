@@ -1,32 +1,28 @@
 import React, { Component } from "react";
 import Button from "material-ui/Button";
 import { CircularProgress } from "material-ui/Progress";
-import ValidatedInput from "../../shared/components/ValidatedInput";
+import ValidatedInput from "shared/components/ValidatedInput";
 import _ from "lodash";
 
-class LoginForm extends Component {
+class LogInForm extends Component {
   state = {
-    loginData: {
+    logInData: {
       email: "",
       password: ""
     }
   };
 
   submitAvailable = () =>
-    _.reduce(this.state.loginData, (result, field) => result && !!field, true);
+    _.reduce(this.state.logInData, (result, field) => result && !!field, true);
 
   handleChange = name => event => {
-    const loginData = Object.assign({}, this.state.loginData, {
-      [name]: event.target.value
-    });
-    this.setState({
-      loginData: loginData
-    });
+    const logInData = { ...this.state.logInData, [name]: event.target.value}
+    this.setState({ logInData });
   };
 
   render() {
-    const { loginData } = this.state;
-    const { errors, pendingLoginRequest, loginUser } = this.props;
+    const { logInData } = this.state;
+    const { errors, pendingLogInRequest, logInUser } = this.props;
     return (
       <div>
         <ValidatedInput
@@ -36,7 +32,7 @@ class LoginForm extends Component {
           formName="login-form"
           errors={errors}
           handleChange={this.handleChange}
-          value={loginData.email}
+          value={logInData.email}
         />
         <ValidatedInput
           type="password"
@@ -45,10 +41,10 @@ class LoginForm extends Component {
           formName="login-form"
           errors={[]}
           handleChange={this.handleChange}
-          value={loginData.password}
+          value={logInData.password}
         />
         <div className="login-button">
-          {pendingLoginRequest ? (
+          {pendingLogInRequest ? (
             <CircularProgress />
           ) : (
             <Button
@@ -57,7 +53,7 @@ class LoginForm extends Component {
               disabled={!this.submitAvailable()}
               color="primary"
               onClick={() => {
-                loginUser(this.state.loginData);
+                logInUser(this.state.logInData);
               }}
             >
               {" LOGIN "}
@@ -69,4 +65,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export default LogInForm;

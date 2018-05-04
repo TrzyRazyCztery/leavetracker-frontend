@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import RegistrationForm from "./RegistrationForm";
-import "../styles/registrationPage.css";
+import RegistrationForm from "registration/components/RegistrationForm";
+import "registration/styles/registrationPage.css";
 import { connect } from "react-redux";
-import { getErrors } from "../../reducers/registerUserReducer";
-import { registerUser, saveFormErrors } from "../actions/registerUserActions";
+import { getErrors } from "reducers/registerUserReducer";
+import { registerUser, saveFormErrors } from "registration/actions/registerUserActions";
 
 class RegistrationPage extends Component {
   render() {

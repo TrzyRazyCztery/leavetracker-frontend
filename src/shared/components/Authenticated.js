@@ -1,5 +1,5 @@
 import React from "react";
-import { getAuthenticatedUser } from "../../reducers/authorizationDataReducer";
+import { getAuthenticatedUser } from "reducers/authorizationDataReducer";
 import { connect } from "react-redux";
 
 const Authenticated = ({ children, user }) => (!!user ? children : null);

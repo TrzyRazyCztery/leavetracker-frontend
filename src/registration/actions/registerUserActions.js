@@ -2,11 +2,11 @@ import {
   REGISTER_USER_SUCCESS,
   REGISTER_USER_FAILED,
   SAVED_FORM_ERRORS
-} from "../../reducers/registerUserReducer";
+} from "reducers/registerUserReducer";
 import {
   notifySuccess,
   notifyError
-} from "../../shared/actions/notificationActions";
+} from "shared/actions/notificationActions";
 
 const registerUserSuccess = () => ({ type: REGISTER_USER_SUCCESS });
 const registerUserFailed = errors => ({
@@ -22,14 +22,14 @@ export const registerUser = userData => dispatch => {
     body: JSON.stringify(userData)
   })
     .then(response => {
-      const response_in_json = response.json();
-      if (response_in_json.registerSuccess) {
-        const userData = response_in_json.user;
+      const responseInJson = response.json();
+      if (responseInJson.registerSuccess) {
+        const userData = responseInJson.user;
         dispatch(registerUserSuccess(userData));
         dispatch(notifySuccess(`Register success!`));
       } else {
-        dispatch(registerUserFailed(response_in_json.errors));
-        dispatch(notifyError("login failed"));
+        dispatch(registerUserFailed(responseInJson.errors));
+        dispatch(notifyError("log in failed"));
       }
     })
     .catch(err => {

@@ -1,4 +1,4 @@
-import { createActionNamespace } from "../utils/actions";
+import { createActionNamespace } from "utils/actions";
 
 //Action Types
 const registerUserAction = createActionNamespace("registerUser");
@@ -10,7 +10,7 @@ export const REGISTER_USER_FAILED = registerUserAction("REGISTER_USER_FAILED");
 export const SAVED_FORM_ERRORS = registerUserAction("SAVED_FORM_ERRORS");
 
 //Selectors
-export const getErrors = state => state.registerUserReducer.errors;
+export const getErrors = state => state.registerData.errors;
 
 //Reducer
 const initialState = {
@@ -20,15 +20,11 @@ const initialState = {
 const registerUserReducer = (state = initialState, action) => {
   switch (action.type) {
     case REGISTER_USER_SUCCESS:
-      return Object.assign({}, state);
+      return state;
     case REGISTER_USER_FAILED:
-      return Object.assign({}, state, {
-        errors: action.errors
-      });
+      return {...state, errors: action.errors };
     case SAVED_FORM_ERRORS:
-      return Object.assign({}, state, {
-        errors: action.errors
-      });
+      return {...state, errors: action.errors };
     default:
       return state;
   }

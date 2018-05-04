@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import Button from "material-ui/Button";
-import ValidatedInput from "../../shared/components/ValidatedInput";
+import ValidatedInput from "shared/components/ValidatedInput";
 import {
   validateEmail,
   validateName,
   validatePassword,
   validatePasswordConfirmation,
   validateSurname
-} from "../../utils/validator";
+} from "utils/validator";
 
 class RegistrationForm extends Component {
   state = {
@@ -41,13 +41,9 @@ class RegistrationForm extends Component {
   };
 
   handleChange = name => event => {
-    const userData = Object.assign({}, this.state.userData, {
-      [name]: event.target.value
-    });
+    const userData = {...this.state.userData, [name]: event.target.value }
     this.setState(
-      {
-        userData: userData
-      },
+      { userData },
       this.validateInput
     );
   };

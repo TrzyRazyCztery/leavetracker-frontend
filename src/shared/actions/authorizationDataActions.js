@@ -1,9 +1,9 @@
 import {
   SAVED_AUTHORIZATION_DATA,
   REMOVED_AUTHORIZATION_DATA
-} from "../../reducers/authorizationDataReducer";
+} from "reducers/authorizationDataReducer";
 
-import { storageAdapter } from "../../utils/adapters";
+import { storageAdapter } from "utils/adapters";
 
 const savedAuthorizationData = userData => ({
   type: SAVED_AUTHORIZATION_DATA,
