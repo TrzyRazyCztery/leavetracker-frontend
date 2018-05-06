@@ -4,7 +4,7 @@ import Header from 'layout/components/Header'
 import Footer from 'layout/components/Footer'
 import Board from 'layout/components/Board'
 import 'layout/styles/app.css'
-import Notifications from 'shared/components/Notifications'
+import Notifications from 'shared/components/notifications'
 
 const App = (props) => {
   return (

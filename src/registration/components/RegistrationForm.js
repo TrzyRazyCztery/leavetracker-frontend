@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import Button from "material-ui/Button";
-import ValidatedInput from "shared/components/ValidatedInput";
+import ValidatedInput from "shared/components/validatedInput";
 import {
   validateEmail,
   validateName,
@@ -64,7 +64,7 @@ class RegistrationForm extends Component {
           errors={errors.email}
           handleChange={this.handleChange}
           value={userData.email}
-        />
+          />
         <ValidatedInput
           type="password"
           name="password"

@@ -6,7 +6,7 @@ import { logoutUser } from "shared/actions/authorizationDataActions";
 const userNavbar = ({ user, logout }) => (
   <div>
     {`You are logged as ${user.name} (`}
-    <a href="#" onClick={logout}>
+    <a href="/" onClick={logout}>
       logout
     </a>
     {")"}
