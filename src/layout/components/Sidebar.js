@@ -2,7 +2,7 @@ import React from 'react';
 import "layout/styles/sidebar.css"
 import logoImage from "assets/img/logo.png";
 import backgroundImage from "assets/img/background-1c.jpg"
-
+import SidebarNavigationLinks from "navigation/components/sidebarNavigationLinks"
 
 const Sidebar = () => {
   return(
@@ -11,6 +11,7 @@ const Sidebar = () => {
           <div className={"logo"}>
                 <img src={logoImage} alt="logo" className={'logo-image'} />
           </div>
+          <SidebarNavigationLinks/>
         </div>
       </div>
   )
