@@ -1,35 +1,31 @@
 import UserEdit from "userEdit/components/UserEdit";
 import UserInformation from "userInformation/components/UserInformation";
 import Dashboard from "dashboard/components/Dashboard";
-import SignPage from "layout/components/SignPage";
 import ManageDesksPage from "desk/components/manageDesksPage";
 
-const boardRoutes = [
+export const  boardRoutes = [
   {
     path: "/dashboard",
     component: Dashboard,
-    headerName: "Dashboard"
+    headerName: "Dashboard",
+    sidebarName: "Dashboard"
   },
-  {
-    path: "/useredit",
-    component: UserEdit,
-    headerName: "User Profile"
-  },
-  {
-    path: "/userinformation",
-    component: UserInformation,
-    headerName: "User Information"
-  },
-  {
-    path: "/sign",
-    component: SignPage,
-    headerName: "Sign"
-  },
+  // {
+  //   path: "/useredit",
+  //   component: UserEdit,
+  //   headerName: "User Profile"
+  // },
+  // {
+  //   path: "/userinformation",
+  //   component: UserInformation,
+  //   headerName: "User Information"
+  // },
+
   {
     path: "/desk",
     component: ManageDesksPage,
-    headerName: "Manage Desks"
+    headerName: "Manage Desks",
+    sidebarName: "Manage Desks"
   }
 ];
 
-export default boardRoutes;
