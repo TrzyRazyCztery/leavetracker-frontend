@@ -2,6 +2,7 @@ import UserEdit from "userEdit/components/UserEdit";
 import UserInformation from "userInformation/components/UserInformation";
 import Dashboard from "dashboard/components/Dashboard";
 import SignPage from "layout/components/SignPage";
+import ManageDesksPage from "desk/components/manageDesksPage";
 
 const boardRoutes = [
   {
@@ -23,6 +24,11 @@ const boardRoutes = [
     path: "/sign",
     component: SignPage,
     headerName: "Sign"
+  },
+  {
+    path: "/desk",
+    component: ManageDesksPage,
+    headerName: "Manage Desks"
   }
 ];
 

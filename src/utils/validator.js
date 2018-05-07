@@ -1,10 +1,20 @@
 const regExpForEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+const minValue= (lowerBound, value) => value >= lowerBound;
 const minLength = (length, value) => value.length >= length;
 const presence = value => !!value;
 const match = (value1, value2) => value1 === value2;
 const formatCheck = (format, value) =>
   format.test(String(value).toLocaleLowerCase());
+
+const validateMinValue = lowerBound => (context, errors, value) => {
+  if (!minValue(lowerBound,value)) {
+    errors[context.fieldName] = (errors[context.fieldName] || []).concat([
+      `${context.displayedName} should be greater than ${lowerBound}.`
+    ]);
+  }
+  return errors
+};
 
 const validatePresence = (context, errors, value) => {
   if (!presence(value)) {
@@ -55,6 +65,15 @@ export const validateEmail = validate(
   },
   validatePresence,
   validateFormat(regExpForEmail)
+);
+
+export const validateDeskNumber = validate(
+    {
+      fieldName: "id",
+      displayedName: "Desk Number"
+    },
+    validatePresence,
+    validateMinValue(1)
 );
 
 export const validatePassword = validate(

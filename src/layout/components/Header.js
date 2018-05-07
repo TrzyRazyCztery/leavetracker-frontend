@@ -1,17 +1,13 @@
 import React from "react";
 import "layout/styles/header.css";
 import Button from "material-ui/Button";
-import colors from "variables/colors";
 import { Link } from "react-router-dom";
-import Authenticated from "shared/components/Authenticated";
-import Unauthenticated from "shared/components/Unauthenticated";
+import Authenticated from "shared/components/authenticated";
+import Unauthenticated from "shared/components/unauthenticated";
 import UserNavbar from "userNavbar/components/userNavbar";
+import {buttonStyle} from"variables/styles"
 
 const Header = () => {
-  const buttonStyle = {
-    backgroundColor: colors["mainColor"],
-    textDecoration: "none"
-  };
   return (
     <div className="header">
       <div className="header-toolbar">

@@ -1,0 +1,18 @@
+.desk-table {
+  display: table;
+  white-space: nowrap;
+  margin: 0 auto;
+  min-width: 30%;
+}
+
+.desk-add-form {
+  padding: 1em;
+  float: right;
+}
+
+.desk-table-clear {
+  clear: both
+}
+
+
+
