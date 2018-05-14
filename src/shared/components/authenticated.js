@@ -1,7 +1,7 @@
-import { getAuthenticatedUser } from "reducers/authorizationDataReducer";
-import { connect } from "react-redux";
+import { getAuthenticatedUser } from 'reducers/authorizationDataReducer';
+import { connect } from 'react-redux';
 
-const Authenticated = ({ children, user }) => (!!user ? children : null);
+const Authenticated = ({ children, user, requiredPermission }) => !!user && user.permissions.includes(requiredPermission) ? children : null;
 
 const mapStateToProps = state => ({
   user: getAuthenticatedUser(state)

@@ -1,13 +1,13 @@
-import { createActionNamespace } from "utils/actions";
+import { createActionNamespace } from 'utils/actions';
 
 //Action Types
-const registerUserAction = createActionNamespace("registerUser");
+const registerUserAction = createActionNamespace('registerUser');
 
 export const REGISTER_USER_SUCCESS = registerUserAction(
-  "REGISTER_USER_SUCCESS"
+  'REGISTER_USER_SUCCESS'
 );
-export const REGISTER_USER_FAILED = registerUserAction("REGISTER_USER_FAILED");
-export const SAVED_FORM_ERRORS = registerUserAction("SAVED_FORM_ERRORS");
+export const REGISTER_USER_FAILED = registerUserAction('REGISTER_USER_FAILED');
+export const SAVED_FORM_ERRORS = registerUserAction('SAVED_FORM_ERRORS');
 
 //Selectors
 export const getErrors = state => state.registerData.errors;

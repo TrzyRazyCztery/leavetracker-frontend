@@ -1,15 +1,15 @@
-import { connect } from "react-redux";
-import React from "react";
-import { getAuthenticatedUser } from "reducers/authorizationDataReducer";
-import { logoutUser } from "shared/actions/authorizationDataActions";
+import { connect } from 'react-redux';
+import React from 'react';
+import { getAuthenticatedUser } from 'reducers/authorizationDataReducer';
+import { logoutUser } from 'shared/actions/authorizationDataActions';
 
 const userNavbar = ({ user, logout }) => (
   <div>
-    {`You are logged as ${user.name} (`}
-    <a href="/" onClick={logout}>
+    {`You are logged in as ${user.name} (`}
+    <a href='/' onClick={logout}>
       logout
     </a>
-    {")"}
+    {')'}
   </div>
 );
 

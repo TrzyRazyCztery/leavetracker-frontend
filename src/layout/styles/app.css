@@ -8,25 +8,32 @@
   background-color: black;
   display: inline-block;
   float: left;
-  position: relative;
+  position: fixed;
 }
 .app-layout {
+  position: relative;
+  left: 260px;
   width: calc(100% - 260px);
   height: 100%;
   display: inline-block;
   background-color: #eee;
+  float: left;
 }
 
 .app-layout-board {
-  height: calc(100% - 170px);
+  overflow-y: auto;
+  z-index: 1;
+  padding-bottom: 20px;
 }
 
 .app-layout-footer {
   height: 70px;
-  position: relative;
+  position: fixed;
   margin-bottom: 0;
 }
 
 .app-layout-header {
   height: 80px;
+  position: relative;
+
 }

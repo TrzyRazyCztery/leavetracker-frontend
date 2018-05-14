@@ -5,7 +5,7 @@ import Button from 'material-ui/Button';
 import DeskOwnerSelect from 'desk/components/deskOwnerSelect';
 import { updateDeskOwner, removeDesk } from 'desk/actions/deskActions';
 import { connect } from 'react-redux';
-
+import Authenticated from 'shared/components/authenticated'
 class DeskRow extends React.Component {
   state = {
     activeEdit: false,
@@ -32,33 +32,40 @@ class DeskRow extends React.Component {
       <TableRow>
         <TableCell>{desk.id}</TableCell>
         <TableCell>
+          <div className={'cell-owner-select'}>
           {activeEdit ? (
             <DeskOwnerSelect
               users={users}
               handleChange={this.handleOwnerChange}
-              value={this.state.newOwnerId}
-              name="newOwnerId"
+              value={!!this.state.newOwnerId ? this.state.newOwnerId : deskOwner.id}
+              name='newOwnerId'
             />
           ) : !!deskOwner ? (
             deskOwner.name + ' ' + deskOwner.surname
           ) : (
             'Unassigned'
           )}
+          </div>
+
+          <Authenticated requiredPermission={2}>
+            <div className="cell-manage-buttons">
+              {activeEdit ? (
+                <Button onClick={() => this.saveUpdateOwner()}>
+                  <Icon>done_icon</Icon>
+                </Button>
+              ) : (
+                <Button onClick={() => this.changeEditVisibility()}>
+                  <Icon>edit_circle</Icon>
+                </Button>
+              )}
+              <Button onClick={() => removeDesk(desk.id)}>
+                <Icon color='error'>delete_circle</Icon>
+              </Button>
+            </div>
+          </Authenticated>
+
         </TableCell>
-        <TableCell>
-          {activeEdit ? (
-            <Button onClick={() => this.saveUpdateOwner()}>
-              <Icon>done_icon</Icon>
-            </Button>
-          ) : (
-            <Button onClick={() => this.changeEditVisibility()}>
-              <Icon>edit_circle</Icon>
-            </Button>
-          )}
-          <Button onClick={() => removeDesk(desk.id)}>
-            <Icon color="error">remove_circle</Icon>
-          </Button>
-        </TableCell>
+
       </TableRow>
     );
   }

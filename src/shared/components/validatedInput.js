@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import TextField from "material-ui/TextField";
+import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
 
 class ValidatedInput extends Component {
   state = {
@@ -12,7 +12,7 @@ class ValidatedInput extends Component {
     });
   };
 
-  fieldId = () => this.props.formName + "-" + this.props.name;
+  fieldId = () => this.props.formName + '-' + this.props.name;
 
   errorsPresent = () => !!this.props.errors && this.props.errors.length > 0;
 
@@ -27,12 +27,12 @@ class ValidatedInput extends Component {
           label={label}
           value={value}
           onChange={handleChange(name)}
-          margin="normal"
+          margin='normal'
           onBlur={this.changeDirty}
         />
         {this.state.dirty &&
           this.errorsPresent() && (
-            <div className="error-text">{errors[0]} </div>
+            <div className='error-text'>{errors[0]} </div>
           )}
       </div>
     );
