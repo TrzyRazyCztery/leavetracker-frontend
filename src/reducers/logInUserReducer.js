@@ -1,10 +1,10 @@
-import { createActionNamespace } from "utils/actions";
+import { createActionNamespace } from 'utils/actions';
 //Action types
-const logInAction = createActionNamespace("logInUser");
+const logInAction = createActionNamespace('logInUser');
 
-export const LOGIN_USER_SUCCESS = logInAction("LOGIN_USER_SUCCESS");
-export const LOGIN_USER_FAILED = logInAction("LOGIN_USER_FAILED");
-export const LOGIN_USER_REQUESTED = logInAction("LOGIN_USER_REQUESTED");
+export const LOGIN_USER_SUCCESS = logInAction('LOGIN_USER_SUCCESS');
+export const LOGIN_USER_FAILED = logInAction('LOGIN_USER_FAILED');
+export const LOGIN_USER_REQUESTED = logInAction('LOGIN_USER_REQUESTED');
 
 //Selectors
 

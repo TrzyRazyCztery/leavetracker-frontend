@@ -8,20 +8,19 @@ import Table, {
 import DeskRow from 'desk/components/deskRow';
 import _ from 'lodash';
 
-const DeskTable = ({ desks, users, showEdit, activeEdit, deskToEdit }) => (
-  <Table className="desks-table">
+const DeskTable = ({ desks, users }) => (
+  <Table className='desks-table'>
     <TableHead>
       <TableRow>
         <TableCell> Desk number </TableCell>
         <TableCell> Owner </TableCell>
-        <TableCell />
       </TableRow>
     </TableHead>
     <TableBody>
       {_.map(desks, (desk, key) => (
         <DeskRow
           desk={desk}
-          deskOwner={users.find(user => desk.ownerId === user.id)}
+          deskOwner={users[desk.ownerId]}
           key={key}
           users={users}
         />

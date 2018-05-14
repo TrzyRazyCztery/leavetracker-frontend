@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import _ from "lodash";
-import Button from "material-ui/Button";
-import ValidatedInput from "shared/components/validatedInput";
+import React, { Component } from 'react';
+import _ from 'lodash';
+import Button from 'material-ui/Button';
+import ValidatedInput from 'shared/components/validatedInput';
 import {
   validateEmail,
   validateName,
   validatePassword,
   validatePasswordConfirmation,
   validateSurname
-} from "utils/validator";
+} from 'utils/validator';
 
 class RegistrationForm extends Component {
   state = {
     userData: {
-      email: "",
-      password: "",
-      passwordConfirmation: "",
-      name: "",
-      surname: ""
+      email: '',
+      password: '',
+      passwordConfirmation: '',
+      name: '',
+      surname: ''
     }
   };
 
@@ -58,53 +58,53 @@ class RegistrationForm extends Component {
     return (
       <form>
         <ValidatedInput
-          type="text"
-          name="email"
-          label="E-mail"
+          type='text'
+          name='email'
+          label='E-mail'
           errors={errors.email}
           handleChange={this.handleChange}
           value={userData.email}
           />
         <ValidatedInput
-          type="password"
-          name="password"
-          label="Password"
+          type='password'
+          name='password'
+          label='Password'
           errors={errors.password}
           handleChange={this.handleChange}
           value={userData.password}
         />
         <ValidatedInput
-          type="password"
-          name="passwordConfirmation"
-          label="Password confirmation"
+          type='password'
+          name='passwordConfirmation'
+          label='Password confirmation'
           errors={errors.passwordConfirmation}
           handleChange={this.handleChange}
           value={userData.passwordConfirmation}
         />
         <ValidatedInput
-          type="text"
-          name="name"
-          label="Name"
+          type='text'
+          name='name'
+          label='Name'
           errors={errors.name}
           handleChange={this.handleChange}
           value={userData.name}
         />
         <ValidatedInput
-          type="text"
-          name="surname"
-          label="Surname"
+          type='text'
+          name='surname'
+          label='Surname'
           errors={errors.surname}
           handleChange={this.handleChange}
           value={userData.surname}
         />
-        <div className="sign-button">
+        <div className='sign-button'>
           <Button
             onClick={this.submit}
-            variant="raised"
-            color="primary"
+            variant='raised'
+            color='primary'
             disabled={!this.submitAvailable()}
           >
-            {" Sign "}
+            {' Sign '}
           </Button>
         </div>
       </form>

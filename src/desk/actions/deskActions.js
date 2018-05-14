@@ -4,7 +4,7 @@ import {
   UPDATE_DESK_OWNER_SUCCESS,
   SAVED_FORM_ERRORS,
   REMOVE_DESK_SUCCESS,
-  CREATE_DESK_FAILED,
+  CREATE_DESK_FAILED
 } from 'reducers/deskReducer';
 
 import { notifyError } from 'shared/actions/notificationActions';
@@ -12,12 +12,12 @@ import { notifyError } from 'shared/actions/notificationActions';
 const loadDesksSuccess = desks => ({ type: LOAD_DESKS_SUCCESS, desks });
 const updateDeskOwnerSuccess = updatedDesk => ({
   type: UPDATE_DESK_OWNER_SUCCESS,
-  updatedDesk,
+  updatedDesk
 });
 const savedFormErrors = errors => ({ type: SAVED_FORM_ERRORS, errors });
 const createDeskSuccess = createdDesk => ({
   type: CREATE_DESK_SUCCESS,
-  createdDesk,
+  createdDesk
 });
 const removeDeskSuccess = deskId => ({ type: REMOVE_DESK_SUCCESS, deskId });
 const createDeskFailed = errors => ({ type: CREATE_DESK_FAILED, errors });
@@ -25,7 +25,7 @@ const createDeskFailed = errors => ({ type: CREATE_DESK_FAILED, errors });
 export const loadDesks = dispatch => {
   return fetch('/desks', {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'request/json' }
   })
     .then(response => {
       const responseInJson = response.json();
@@ -36,11 +36,11 @@ export const loadDesks = dispatch => {
     });
 };
 
-export const updateDeskOwner = (deskId, newOwnerId) => dispatch => {
-  return fetch('/desks/changeowner', {
+export const updateDeskOwner = (deskId, ownerId) => dispatch => {
+  return fetch('/desks/' + deskId, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ deskId, newOwnerId }),
+    headers: { 'Content-Type': 'request/json' },
+    body: JSON.stringify({ ownerId })
   })
     .then(response => {
       const response_in_json = response.json();
@@ -54,10 +54,10 @@ export const updateDeskOwner = (deskId, newOwnerId) => dispatch => {
 };
 
 export const createDesk = deskData => dispatch => {
-  return fetch('./desks/newdesk', {
+  return fetch('./desks', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(deskData),
+    headers: { 'Content-Type': 'request/json' },
+    body: JSON.stringify(deskData)
   })
     .then(response => {
       const response_in_json = response.json();
@@ -76,14 +76,15 @@ export const createDesk = deskData => dispatch => {
 };
 
 export const removeDesk = deskId => dispatch => {
-  return fetch('./desks/removedesk', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ deskId }),
+  return fetch('./desks/' + deskId, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'request/json' },
+    body: JSON.stringify({ deskId })
   })
     .then(response => {
-      const responseInJson = response.json();
-      dispatch(removeDeskSuccess(responseInJson.deskId));
+      response.ok
+        ? dispatch(removeDeskSuccess(deskId))
+        : dispatch(notifyError(response.json()));
     })
     .catch(err => {
       dispatch(notifyError(err));

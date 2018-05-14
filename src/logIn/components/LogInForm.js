@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import Button from "material-ui/Button";
-import { CircularProgress } from "material-ui/Progress";
-import ValidatedInput from "shared/components/validatedInput";
-import _ from "lodash";
+import React, { Component } from 'react';
+import Button from 'material-ui/Button';
+import { CircularProgress } from 'material-ui/Progress';
+import ValidatedInput from 'shared/components/validatedInput';
+import _ from 'lodash';
 
 class LogInForm extends Component {
   state = {
     logInData: {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     }
   };
 
@@ -26,37 +26,37 @@ class LogInForm extends Component {
     return (
       <div>
         <ValidatedInput
-          type="text"
-          name="email"
-          label="E-mail"
-          formName="login-form"
+          type='text'
+          name='email'
+          label='E-mail'
+          formName='login-form'
           errors={errors}
           handleChange={this.handleChange}
           value={logInData.email}
         />
         <ValidatedInput
-          type="password"
-          name="password"
-          label="Password"
-          formName="login-form"
+          type='password'
+          name='password'
+          label='Password'
+          formName='login-form'
           errors={[]}
           handleChange={this.handleChange}
           value={logInData.password}
         />
-        <div className="login-button">
+        <div className='login-button'>
           {pendingLogInRequest ? (
             <CircularProgress />
           ) : (
             <Button
               style={this.buttonStyle}
-              variant="raised"
+              variant='raised'
               disabled={!this.submitAvailable()}
-              color="primary"
+              color='primary'
               onClick={() => {
                 logInUser(this.state.logInData);
               }}
             >
-              {" LOGIN "}
+              {' LOGIN '}
             </Button>
           )}
         </div>

@@ -14,7 +14,7 @@ import Dialog, {
 import Button from 'material-ui/Button';
 import { validateDeskNumber } from 'utils/validator';
 
-class DeskAddForm extends React.Component {
+class CreateDeskForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -65,23 +65,23 @@ class DeskAddForm extends React.Component {
     const { deskData } = this.state;
 
     return (
-      <div className="desk-add-form">
+      <div className='desk-add-form'>
         <Button
           style={buttonStyle}
-          variant="raised"
-          color="primary"
+          variant='raised'
+          color='primary'
           onClick={this.handleClickOpen}
         >
           New desk
         </Button>
         <Dialog open={this.state.open} onClose={this.handleClose}>
-          <DialogTitle id="form-dialog-title">Create new desk</DialogTitle>
+          <DialogTitle id='form-dialog-title'>Create new desk</DialogTitle>
           <DialogContent>
             <ValidatedInput
               errors={errors.id}
-              type="number"
-              name="id"
-              label="Desk Number"
+              type='number'
+              name='id'
+              label='Desk Number'
               handleChange={this.handleChange}
               value={deskData.id}
             />
@@ -91,20 +91,20 @@ class DeskAddForm extends React.Component {
                 handleChange={this.handleChange}
                 name={'ownerId'}
                 value={deskData.ownerId}
-                label="Owner"
+                label='Owner'
               />
             </FormControl>
           </DialogContent>
           <DialogActions>
             <Button
                 onClick={this.handleClose}
-                color="primary"
+                color='primary'
             >
               Cancel
             </Button>
             <Button
               onClick={this.submit}
-              color="primary"
+              color='primary'
               disabled={!this.submitAvailable()}
             >
               Create
@@ -131,4 +131,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeskAddForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateDeskForm);

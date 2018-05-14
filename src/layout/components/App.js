@@ -8,19 +8,19 @@ import Notifications from 'shared/components/notifications'
 
 const App = (props) => {
   return (
-      <div className="app">
+      <div className='app'>
         <Notifications />
-        <div className="app-sidebar">
+        <div className='app-sidebar'>
           <Sidebar/>
         </div>
-        <div className="app-layout">
-          <div className="app-layout-header">
+        <div className='app-layout'>
+          <div className='app-layout-header'>
             <Header {...props}/>
           </div>
-          <div className="app-layout-board">
+          <div className='app-layout-board'>
             <Board/>
           </div>
-          <div className="app-layout-footer">
+          <div className='app-layout-footer'>
             <Footer/>
           </div>
         </div>

@@ -1,22 +1,22 @@
-import React from "react";
-import { ToastContainer } from "react-toastr";
-import { connect } from "react-redux";
-import { getNotification } from "reducers/notificationReducer";
+import React from 'react';
+import { ToastContainer } from 'react-toastr';
+import { connect } from 'react-redux';
+import { getNotification } from 'reducers/notificationReducer';
 
 class Notifications extends React.Component {
   componentWillReceiveProps(nextProps) {
     const notification = nextProps.notification;
     switch (notification.type) {
-      case "error":
+      case 'error':
         this.container.error(notification.message);
         break;
-      case "warning":
+      case 'warning':
         this.container.warning(notification.message);
         break;
-      case "info":
+      case 'info':
         this.container.info(notification.message);
         break;
-      case "success":
+      case 'success':
         this.container.success(notification.message);
         break;
       default:
@@ -26,7 +26,7 @@ class Notifications extends React.Component {
   render() {
     return (
       <div>
-        <ToastContainer ref={(container) => {this.container = container}} className="toast-top-right" />
+        <ToastContainer ref={(container) => {this.container = container}} className='toast-top-right' />
       </div>
     );
   }

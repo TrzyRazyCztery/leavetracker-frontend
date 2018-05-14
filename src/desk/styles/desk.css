@@ -2,7 +2,7 @@
   display: table;
   white-space: nowrap;
   margin: 0 auto;
-  min-width: 30%;
+  min-width: 50%;
 }
 
 .desk-add-form {
@@ -12,6 +12,20 @@
 
 .desk-table-clear {
   clear: both
+}
+.cell-owner-select{
+  width: 200px;
+  display:inline-block;
+  overflow:hidden;
+}
+
+.cell-manage-buttons {
+  width: 200px;
+  display:inline-block;
+  overflow:hidden;
+}
+.request-page-row-buttons {
+  display:inline-block;
 }
 
 
