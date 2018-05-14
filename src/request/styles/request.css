@@ -1,0 +1,56 @@
+.requests-page-user-select {
+  padding-bot: 20px;
+  padding-left: 20px;
+}
+.request-page-create-button {
+  padding-top: 20px;
+}
+
+.request-page-user-requests {
+  display: table;
+  white-space: nowrap;
+  margin: 0 auto;
+  min-width: 50%;
+  max-width: 700px;
+}
+.request-row-status-Pending {
+  color: orange;
+}
+.request-row-status-Approved {
+  color: green;
+}
+.request-row-status-Declined {
+  color: red;
+}
+.info-popover {
+  max-width: 300px;
+  margin: 10px;
+}
+.request-creator {
+  display: table;
+  height: 80%;
+  margin: 0 auto;
+  padding-top: 70px;
+  width: 700px;
+}
+.request-creator-form {
+  display: table-cell;
+  width: 200px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.request-creator-date-picker {
+  display: table-cell;
+  width: calc(100% - 220px);
+}
+.request-creator-form-buttons {
+  width: 220px;
+}
+.request-creator-form-buttons button {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.request-creator-fields {
+  width: 200px;
+}
