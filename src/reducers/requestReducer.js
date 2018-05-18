@@ -1,5 +1,5 @@
 import { createActionNamespace } from "utils/actions";
-import _ from "lodash";
+import {omit} from "lodash";
 
 const requestAction = createActionNamespace("request");
 
@@ -51,7 +51,7 @@ const requestReducer = (state = initialState, action) => {
     case REMOVE_REQUEST_SUCCESS:
       return {
         ...state,
-        requestsList: _.omit(state.requestsList, action.requestId)
+        requestsList: omit(state.requestsList, action.requestId)
       };
     case CHANGE_REQUEST_STATUS_SUCCESS:
       return {

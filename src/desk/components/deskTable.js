@@ -6,7 +6,7 @@ import Table, {
   TableHead,
 } from 'material-ui/Table';
 import DeskRow from 'desk/components/deskRow';
-import _ from 'lodash';
+import {map, find} from 'lodash';
 
 const DeskTable = ({ desks, users, showEdit, activeEdit, deskToEdit }) => (
   <Table className="desks-table">
@@ -18,10 +18,10 @@ const DeskTable = ({ desks, users, showEdit, activeEdit, deskToEdit }) => (
       </TableRow>
     </TableHead>
     <TableBody>
-      {_.map(desks, (desk, key) => (
+      {map(desks, (desk, key) => (
         <DeskRow
           desk={desk}
-          deskOwner={users.find(user => desk.ownerId === user.id)}
+          deskOwner={find(users,user => desk.ownerId === user.id)}
           key={key}
           users={users}
         />

@@ -1,11 +1,11 @@
-import _ from 'lodash';
+import { find, reduce } from 'lodash';
 
 export const usersApi = users => (opts, url, resolve, reject) => {
   if (url.endsWith('/users/authenticate')) {
     switch (opts.method) {
       case 'POST':
         const params = JSON.parse(opts.body);
-        const user = _.find(
+        const user = find(
           users,
           user =>
             user.email === params.email && user.password === params.password
@@ -39,7 +39,7 @@ export const usersApi = users => (opts, url, resolve, reject) => {
       case 'POST':
         const body = JSON.parse(opts.body);
 
-        const duplicateUser = _.find(
+        const duplicateUser = find(
           users,
           user => user.email === body.email
         );
@@ -48,7 +48,7 @@ export const usersApi = users => (opts, url, resolve, reject) => {
         } else {
           const newUser = {
             ...body,
-            id: _.reduce(users, (counter, user) => counter + 1, 0) + 1,
+            id: reduce(users, (counter, user) => counter + 1, 0) + 1,
             permissions: [1]
           };
           users[newUser.id] = newUser;

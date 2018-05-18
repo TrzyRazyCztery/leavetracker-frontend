@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Button from "material-ui/Button";
 import { CircularProgress } from "material-ui/Progress";
 import ValidatedInput from "shared/components/validatedInput";
-import _ from "lodash";
+import {reduce} from "lodash";
 
 class LogInForm extends Component {
   state = {
@@ -13,7 +13,7 @@ class LogInForm extends Component {
   };
 
   submitAvailable = () =>
-    _.reduce(this.state.logInData, (result, field) => result && !!field, true);
+    reduce(this.state.logInData, (result, field) => result && !!field, true);
 
   handleChange = name => event => {
     const logInData = { ...this.state.logInData, [name]: event.target.value}

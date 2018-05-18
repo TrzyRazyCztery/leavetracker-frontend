@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { reduce } from 'lodash';
 import moment from 'moment'
 export const requestsApi = (requests, utils) => (opts, url, resolve, reject) => {
   if (url.endsWith('/requests')) {
@@ -19,7 +19,7 @@ export const requestsApi = (requests, utils) => (opts, url, resolve, reject) => 
 
         ) {
           const newRequest = {
-            id: _.reduce(requests, (counter, request) => counter + 1, 0) + 1,
+            id: reduce(requests, (counter, request) => counter + 1, 0) + 1,
             ownerId: opts.headers['X-Authorization-Id'],
             requestTypeId: params.requestTypeId,
             requestStatusId: 3,

@@ -6,7 +6,7 @@ import Table, {
   TableHead
 } from "material-ui/Table";
 import RequestRow from "request/components/requestRow";
-import _ from "lodash";
+import { find, map } from "lodash";
 
 const RequestTable = ({ requests, user, requestTypes, requestStatuses }) => (
   <Table className="request-table">
@@ -23,7 +23,7 @@ const RequestTable = ({ requests, user, requestTypes, requestStatuses }) => (
       </TableRow>
     </TableHead>
     <TableBody>
-      {_.map(
+      {map(
         requests,
         (request, key) =>
           request.ownerId === user.id ? (
@@ -31,11 +31,11 @@ const RequestTable = ({ requests, user, requestTypes, requestStatuses }) => (
               request={request}
               requestOwner={user}
               key={key}
-              requestType={_.find(
+              requestType={find(
                 requestTypes,
                 type => type.id === request.requestTypeId
               )}
-              requestStatus={_.find(
+              requestStatus={find(
                 requestStatuses,
                 status => status.id === request.requestStatusId
               )}
