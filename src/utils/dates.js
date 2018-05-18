@@ -1,27 +1,19 @@
-import moment from 'moment'
+import Moment from "moment";
+import { extendMoment } from "moment-range";
+const moment = extendMoment(Moment);
 
-const listOfDaysBetweenDates = (startDate, endDate) => {
-  let dates = [];
+export const APPLICATION_DATE_FORMAT = "DD/MM/YYYY";
 
-  let currDate = moment(startDate).startOf('day');
-  let lastDate = moment(endDate).startOf('day');
-
-  while(currDate.diff(lastDate) <= 0) {
-    dates.push(moment(currDate.toDate()));
-    currDate = currDate.add(1, 'days');
-  }
-
-
-  return dates;
-};
+const listOfDaysBetweenDates = (startDate, endDate) =>
+  Array.from(moment.range(startDate, endDate).by("day"));
 
 export const workDaysBetween = (startDate, endDate) => {
-  if(!startDate || !endDate){return 0}
-  const daysList = listOfDaysBetweenDates(startDate, endDate);
-  const workDays = daysList.reduce((result, day) => {
-    return (day.day() === 0 || day.day() === 6)
-      ? result
-      : result + 1
-  },0);
-  return workDays
+  if (!startDate || !endDate) {
+    return 0;
+  }
+  return listOfDaysBetweenDates(startDate, endDate).reduce((result, day) => {
+    return day.day() === 0 || day.day() === 6 ? result : result + 1;
+  }, 0);
 };
+
+export const formatDate = date => moment(date).format(APPLICATION_DATE_FORMAT);

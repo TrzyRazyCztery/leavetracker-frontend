@@ -10,6 +10,7 @@ import moment from "moment";
 import { workDaysBetween } from "utils/dates";
 import { buttonStyle } from "variables/styles";
 import Button from "material-ui/Button";
+import {formatDate} from "utils/dates";
 
 const initialState = {
   requestData: {
@@ -30,7 +31,7 @@ class CreateRequestForm extends React.Component {
         ...this.state.requestData,
         startDate: moment(startDate),
         endDate: moment(endDate),
-        days: workDaysBetween(moment(startDate), moment(endDate))
+        days: workDaysBetween(startDate, endDate)
       }
     });
   };
@@ -76,7 +77,7 @@ class CreateRequestForm extends React.Component {
                   error={errors.startDate}
                   id={"request-creator-startdate"}
                   label="Start Date"
-                  value={requestData.startDate.format("DD/MM/YYYY")}
+                  value={formatDate(requestData.startDate)}
                   margin="normal"
                 />
                 <TextField
@@ -84,7 +85,7 @@ class CreateRequestForm extends React.Component {
                   error={errors.endDate}
                   id={"request-creator-enddate"}
                   label="End Date"
-                  value={requestData.endDate.format("DD/MM/YYYY")}
+                  value={formatDate(requestData.endDate)}
                   margin="normal"
                 />
                 <TextField

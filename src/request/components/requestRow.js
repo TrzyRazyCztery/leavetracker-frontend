@@ -10,7 +10,8 @@ import { connect } from "react-redux";
 import Button from "material-ui/Button";
 import Icon from "material-ui/Icon";
 import Popover from "material-ui/Popover";
-import moment from "moment";
+import {formatDate} from "utils/dates";
+
 class RequestRow extends React.Component {
   state = {
     anchorEl: null
@@ -51,8 +52,8 @@ class RequestRow extends React.Component {
     return (
       <TableRow>
         <TableCell>{requestOwner.name + " " + requestOwner.surname}</TableCell>
-        <TableCell>{moment(request.startDate).format("DD/MM/YYYY")}</TableCell>
-        <TableCell>{moment(request.endDate).format("DD/MM/YYYY")}</TableCell>
+        <TableCell>{formatDate(request.startDate)}</TableCell>
+        <TableCell>{formatDate(request.endDate)}</TableCell>
         <TableCell>{request.days}</TableCell>
         <TableCell>{requestType.type}</TableCell>
         <TableCell style={{ color: this.statusColor(requestStatus.status) }}>
