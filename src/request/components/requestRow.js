@@ -11,6 +11,7 @@ import Button from "material-ui/Button";
 import Icon from "material-ui/Icon";
 import Popover from "material-ui/Popover";
 import {formatDate} from "utils/dates";
+import {compact} from 'lodash'
 
 class RequestRow extends React.Component {
   state = {
@@ -51,7 +52,7 @@ class RequestRow extends React.Component {
     } = this.props;
     return (
       <TableRow>
-        <TableCell>{requestOwner.name + " " + requestOwner.surname}</TableCell>
+        <TableCell>{compact([requestOwner.name, requestOwner.surname]).join(' ')}</TableCell>
         <TableCell>{formatDate(request.startDate)}</TableCell>
         <TableCell>{formatDate(request.endDate)}</TableCell>
         <TableCell>{request.days}</TableCell>
