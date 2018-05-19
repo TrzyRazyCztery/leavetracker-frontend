@@ -11,11 +11,12 @@ import Button from "material-ui/Button";
 import Icon from "material-ui/Icon";
 import Popover from "material-ui/Popover";
 import {formatDate} from "utils/dates";
+import Dialog, {DialogTitle,DialogContentText,DialogContent} from 'material-ui/Dialog'
 import {compact} from 'lodash'
 
 class RequestRow extends React.Component {
   state = {
-    anchorEl: null
+    infoOpen: false
   };
 
   statusColor = status => {
@@ -28,16 +29,12 @@ class RequestRow extends React.Component {
         return "red";
     }
   };
-  handleInfoOpen = event => {
-    this.setState({
-      anchorEl: event.currentTarget
-    });
+  handleInfoOpen = () => {
+    this.setState({ infoOpen: true });
   };
 
-  handleClose = () => {
-    this.setState({
-      anchorEl: null
-    });
+  handleInfoClose = () => {
+    this.setState({ infoOpen: false });
   };
 
   render() {
@@ -64,24 +61,21 @@ class RequestRow extends React.Component {
           <Button onClick={this.handleInfoOpen}>
             <Icon>info_icon</Icon>
           </Button>
-          <Popover
-            open={Boolean(this.state.anchorEl)}
-            anchorEl={this.state.anchorEl}
+          <Dialog
+            open={this.state.infoOpen}
             onClose={this.handleClose}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "center"
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "center"
-            }}
           >
-            <div className="info-popover">
-              <h4> Reason </h4>
-              <span> {request.info} </span>
-            </div>
-          </Popover>
+            <DialogTitle id="alert-dialog-slide-title">
+              { compact([requestOwner.name, requestOwner.surname]).join(' ') + ' ' +
+              compact([formatDate(request.startDate), formatDate(request.endDate)]).join(' - ') + ' ' +
+              requestType.type }
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-slide-description">
+                {request.info}
+              </DialogContentText>
+            </DialogContent>
+          </Dialog>
         </TableCell>
         <TableCell>
           {requestStatus.status === "Pending" ? (
