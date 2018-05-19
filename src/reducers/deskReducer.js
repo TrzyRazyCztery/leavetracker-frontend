@@ -1,5 +1,5 @@
-import {createActionNamespace} from 'utils/actions';
-import _ from 'lodash'
+import {createActionNamespace} from "utils/actions";
+import {omit} from 'lodash'
 
 const deskAction = createActionNamespace('desk');
 
@@ -30,7 +30,7 @@ const deskReducer = ( state = initialState, action ) => {
     case SAVED_FORM_ERRORS:
       return {...state, errors: action.errors };
     case REMOVE_DESK_SUCCESS:
-      return {...state, deskList: _.omit(state.deskList, action.deskId)};
+      return {...state, deskList: omit(state.deskList, action.deskId)};
     default:
       return state;
   }

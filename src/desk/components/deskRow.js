@@ -5,7 +5,9 @@ import Button from 'material-ui/Button';
 import DeskOwnerSelect from 'desk/components/deskOwnerSelect';
 import { updateDeskOwner, removeDesk } from 'desk/actions/deskActions';
 import { connect } from 'react-redux';
+import {compact} from 'lodash'
 import Authenticated from 'shared/components/authenticated'
+
 class DeskRow extends React.Component {
   state = {
     activeEdit: false,
@@ -41,7 +43,7 @@ class DeskRow extends React.Component {
               name='newOwnerId'
             />
           ) : !!deskOwner ? (
-            deskOwner.name + ' ' + deskOwner.surname
+            compact([deskOwner.name, deskOwner.surname]).join(' ')
           ) : (
             'Unassigned'
           )}

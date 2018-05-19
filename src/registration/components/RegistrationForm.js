@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import _ from 'lodash';
-import Button from 'material-ui/Button';
-import ValidatedInput from 'shared/components/validatedInput';
+import React, { Component } from "react";
+import { reduce } from "lodash";
+import Button from "material-ui/Button";
+import ValidatedInput from "shared/components/validatedInput";
 import {
   validateEmail,
   validateName,
@@ -22,7 +22,7 @@ class RegistrationForm extends Component {
   };
 
   submitAvailable = () =>
-    _.reduce(this.state.userData, (result, field) => result && !!field, true);
+    reduce(this.state.userData, (result, field) => result && !!field, true);
 
   validateInput = () => {
     const { userData } = this.state;
