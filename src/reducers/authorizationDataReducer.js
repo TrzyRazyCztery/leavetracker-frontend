@@ -1,13 +1,13 @@
-import { createActionNamespace } from "utils/actions";
-import { LOGIN_USER_SUCCESS } from "reducers/logInUserReducer";
+import { createActionNamespace } from 'utils/actions';
+import { LOGIN_USER_SUCCESS } from 'reducers/logInUserReducer';
 //Action Types
-const authorizationDataAction = createActionNamespace("authorizationData");
+const authorizationDataAction = createActionNamespace('authorizationData');
 
 export const SAVED_AUTHORIZATION_DATA = authorizationDataAction(
-  "SAVED_AUTHORIZATION_DATA"
+  'SAVED_AUTHORIZATION_DATA'
 );
 export const REMOVED_AUTHORIZATION_DATA = authorizationDataAction(
-  "REMOVED_AUTHORIZATION_DATA"
+  'REMOVED_AUTHORIZATION_DATA'
 );
 //Selectors
 export const getAuthenticatedUser = state =>

@@ -1,12 +1,12 @@
-import { createActionNamespace } from "utils/actions";
+import { createActionNamespace } from 'utils/actions';
 
 //Action Types
-const registerNotificationAction = createActionNamespace("notification");
+const registerNotificationAction = createActionNamespace('notification');
 
-export const NOTIFIED_ERROR = registerNotificationAction("NOTIFIED_ERROR");
-export const NOTIFIED_INFO = registerNotificationAction("NOTIFIED_INFO");
-export const NOTIFIED_SUCCESS = registerNotificationAction("NOTIFIED_SUCCESS");
-export const NOTIFIED_WARNING = registerNotificationAction("NOTIFIED_WARNING");
+export const NOTIFIED_ERROR = registerNotificationAction('NOTIFIED_ERROR');
+export const NOTIFIED_INFO = registerNotificationAction('NOTIFIED_INFO');
+export const NOTIFIED_SUCCESS = registerNotificationAction('NOTIFIED_SUCCESS');
+export const NOTIFIED_WARNING = registerNotificationAction('NOTIFIED_WARNING');
 
 //Selectors
 export const getNotification = state => state.notifications.notification;
@@ -22,7 +22,7 @@ const notificationReducer = (state = initialState, action) => {
       return {
         ...state,
         notification: {
-          type: "error",
+          type: 'error',
           message: action.message
         }
       };
@@ -30,7 +30,7 @@ const notificationReducer = (state = initialState, action) => {
       return {
         ...state,
         notification: {
-          type: "info",
+          type: 'info',
           message: action.message
         }
       };
@@ -38,7 +38,7 @@ const notificationReducer = (state = initialState, action) => {
       return {
         ...state,
         notification: {
-          type: "success",
+          type: 'success',
           message: action.message
         }
       };
@@ -46,7 +46,7 @@ const notificationReducer = (state = initialState, action) => {
       return {
         ...state,
         notification: {
-          type: "warning",
+          type: 'warning',
           message: action.message
         }
       };

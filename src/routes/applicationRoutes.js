@@ -1,9 +1,9 @@
-import SignPage from "layout/components/SignPage";
+import SignPage from 'layout/components/SignPage';
 
 export const applicationRoutes = [
   {
-    path: "/sign",
+    path: '/sign',
     component: SignPage,
-    headerName: "Sign"
+    headerName: 'Sign'
   }
 ];

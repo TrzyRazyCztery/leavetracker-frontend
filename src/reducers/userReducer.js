@@ -1,12 +1,12 @@
-import { createActionNamespace } from "utils/actions";
+import { createActionNamespace } from 'utils/actions';
 
-const userAction = createActionNamespace("user");
-export const LOAD_USERS_SUCCESS = userAction("LOAD_USERS_SUCCESS");
+const userAction = createActionNamespace('user');
+export const LOAD_USERS_SUCCESS = userAction('LOAD_USERS_SUCCESS');
 
 export const getUsers = state => state.users.usersList;
 
 const initialState = {
-  usersList: []
+  usersList: {}
 };
 
 const userReducer = (state = initialState, action) => {

@@ -7,7 +7,8 @@ import { getUsers } from 'reducers/userReducer';
 import DeskTable from 'desk/components/deskTable';
 import 'desk/styles/desk.css';
 import Paper from 'material-ui/Paper';
-import DeskAddForm from 'desk/components/deskAddForm';
+import DeskAddForm from 'desk/components/createDeskForm';
+import Authenticated from 'shared/components/authenticated'
 
 class ManageDesksPage extends React.Component {
   componentDidMount = () => {
@@ -22,11 +23,13 @@ class ManageDesksPage extends React.Component {
   render() {
     const { desks, users } = this.props;
     return (
-      <div className="desk-table">
+      <div className='desk-table'>
         <Paper>
           <DeskTable desks={desks} users={users} />
-          <DeskAddForm users={users} />
-          <div className="desk-table-clear"> </div>
+          <Authenticated requiredPermission = {2}>
+            <DeskAddForm users={users} />
+          </Authenticated>
+          <div className='desk-table-clear'> </div>
         </Paper>
       </div>
     );

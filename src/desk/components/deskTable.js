@@ -8,13 +8,12 @@ import Table, {
 import DeskRow from 'desk/components/deskRow';
 import {map, find} from 'lodash';
 
-const DeskTable = ({ desks, users, showEdit, activeEdit, deskToEdit }) => (
-  <Table className="desks-table">
+const DeskTable = ({ desks, users }) => (
+  <Table className='desks-table'>
     <TableHead>
       <TableRow>
         <TableCell> Desk number </TableCell>
         <TableCell> Owner </TableCell>
-        <TableCell />
       </TableRow>
     </TableHead>
     <TableBody>
