@@ -7,7 +7,7 @@ import { createRequest, saveFormErrors } from "request/actions/requestActions";
 import { connect } from "react-redux";
 import RequestTypeSelector from "shared/components/requestTypeSelector";
 import moment from "moment";
-import { workDaysBetween } from "utils/dates";
+import { numberOfBusinessDaysBetweenDates } from "utils/dates";
 import { buttonStyle } from "variables/styles";
 import Button from "material-ui/Button";
 import {formatDate} from "utils/dates";
@@ -31,7 +31,7 @@ class CreateRequestForm extends React.Component {
         ...this.state.requestData,
         startDate: moment(startDate),
         endDate: moment(endDate),
-        days: workDaysBetween(startDate, endDate)
+        days: numberOfBusinessDaysBetweenDates(startDate, endDate)
       }
     });
   };
