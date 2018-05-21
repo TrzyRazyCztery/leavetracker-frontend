@@ -1,0 +1,13 @@
+.employee-information {
+  width: 80%;
+}
+.employee-information-user-selector {
+  margin: 10% 10% 15% 10%;
+  height: 30%;
+  width: 100%;
+}
+
+.employee-information-year-selector {
+  margin: 15% 10% 10% 10%;
+  height: 30%;
+}
