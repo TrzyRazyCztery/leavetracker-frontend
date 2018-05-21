@@ -37,7 +37,7 @@ export const configureFakeBackend = () => {
   window.fetch = function(url, opts) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const validAPI = find(APIs, api => {console.log(url, url.includes(api.url)); return url.includes(api.url)});
+        const validAPI = find(APIs, api =>  url.includes(api.url));
         !!validAPI ? validAPI.api(opts, url, resolve, reject) : null;
       }, 500);
     });
