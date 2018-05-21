@@ -63,7 +63,7 @@ class RequestRow extends React.Component {
           </Button>
           <Dialog
             open={this.state.infoOpen}
-            onClose={this.handleClose}
+            onClose={this.handleInfoClose}
           >
             <DialogTitle id="alert-dialog-slide-title">
               { compact([requestOwner.name, requestOwner.surname]).join(' ') + ' ' +
