@@ -1,0 +1,20 @@
+.DayPicker-Day--homeOffice {
+  background: linear-gradient(60deg, #66bb6a, #43a047);
+  color: white;
+}
+.DayPicker-Day--sick {
+   background: linear-gradient(60deg, #26c6da, #00acc1);
+  color: white;
+}
+.DayPicker-Day--other {
+   background: linear-gradient(60deg, #ef5350, #e53935);
+  color: white;
+}
+.DayPicker-Day--training {
+  background: linear-gradient(60deg, #ab47bc, #8e24aa);
+  color: white;
+}
+.DayPicker-Day--vacation   {
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  color: white;
+}
