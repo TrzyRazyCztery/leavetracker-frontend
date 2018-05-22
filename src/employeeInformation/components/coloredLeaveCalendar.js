@@ -1,27 +1,30 @@
 import React from "react";
 import "react-day-picker/lib/style.css";
+import "employeeInformation/styles/coloredLeaveCalendarStyle.css";
 import { leaveTypeHighlight } from "employeeInformation/styles/styles";
 import DayPicker from "react-day-picker";
-import { flatten, map } from "lodash";
+import { flatMap, filter, map } from "lodash";
 import { formatDate, listOfBusinessDaysBetweenDates } from "utils/dates";
 
-const requestsDaysListForLeaveTypeId = (requests, leaveTypeId) =>
-  flatten(
-    map(
-      requests,
-      request =>
-        request.requestTypeId === leaveTypeId && request.requestStatusId === 1
-          ? map(
-              listOfBusinessDaysBetweenDates(
-                request.startDate,
-                request.endDate
-              ),
-              date => new Date(formatDate(date))
-            )
-          : []
-    )
+const filterRequests = leaveTypeId => requests =>
+  requests.filter(
+    request =>
+      request.requestTypeId === leaveTypeId && request.requestStatusId === 1
   );
 
+const daysListForRequest = request =>
+  map(
+    listOfBusinessDaysBetweenDates(request.startDate, request.endDate),
+    date => new Date(formatDate(date))
+  );
+
+const requestsDaysListForLeaveTypeId = (requests, leaveTypeId) => {
+  const requestFilter = filterRequests(leaveTypeId);
+
+  return flatMap(requestFilter(requests), request =>
+    daysListForRequest(request)
+  );
+};
 const ColoredLeaveCalendar = ({
   numberOfMonths,
   year,
@@ -29,7 +32,6 @@ const ColoredLeaveCalendar = ({
   requests
 }) => (
   <div>
-    <style>{leaveTypeHighlight}</style>
     <DayPicker
       numberOfMonths={numberOfMonths}
       modifiers={{
