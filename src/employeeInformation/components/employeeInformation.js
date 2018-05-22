@@ -29,7 +29,7 @@ class EmployeeInformation extends React.Component {
       this.props.loadRequests(),
       this.props.loadRequestUtils()
     ]).then(_ => {
-      this.setState({ loaded: false });
+      this.setState({ loaded: true });
     });
   };
 
