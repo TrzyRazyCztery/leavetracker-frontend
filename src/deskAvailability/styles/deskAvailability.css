@@ -1,0 +1,29 @@
+.desk-availability-item {
+  height: 100px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.desk-availability-bar-date{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  color: black;
+  transform: translateY(-50%);
+}
+
+.day-name{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.day-date{
+  font-size: 1em;
+}
+.show-desk-button {
+  position: relative;
+  float: right;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
