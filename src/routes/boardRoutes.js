@@ -1,7 +1,8 @@
 import Dashboard from 'dashboard/components/Dashboard';
 import ManageDesksPage from 'desk/components/manageDesksPage';
 import ManageRequestsPage from 'request/components/manageRequestsPage';
-import EmployeeInformation from 'employeeInformation/components/employeeInformation'
+import EmployeeInformation from 'employeeInformation/components/employeeInformation';
+import DeskAvailabilityPage from 'deskAvailability/components/deskAvailabilityPage';
 
 export const  boardRoutes = [
   {
@@ -12,14 +13,14 @@ export const  boardRoutes = [
     requiredPermission: 1
   },
   {
-    path: '/desk',
+    path: '/managedesks',
     component: ManageDesksPage,
     headerName: 'Manage Desks',
-    sidebarName: 'Desks',
+    sidebarName: 'Manage Desks',
     requiredPermission: 1
   },
   {
-    path: '/request',
+    path: '/managerequests',
     component: ManageRequestsPage,
     headerName: 'Manage Requests',
     sidebarName: 'Manage Requests',
@@ -31,6 +32,14 @@ export const  boardRoutes = [
     headerName: 'Employee Information',
     sidebarName: 'Employee Information',
     requiredPermission: 1
+  },
+  {
+    path: '/deskavailability',
+    component: DeskAvailabilityPage,
+    headerName: 'Desk Availability',
+    sidebarName: 'Desk Availability',
+    requiredPermission: 1
   }
+
 ];
 

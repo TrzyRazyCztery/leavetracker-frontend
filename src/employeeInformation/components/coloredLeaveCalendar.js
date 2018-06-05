@@ -3,28 +3,8 @@ import "react-day-picker/lib/style.css";
 import "employeeInformation/styles/coloredLeaveCalendarStyle.css";
 import { leaveTypeHighlight } from "employeeInformation/styles/styles";
 import DayPicker from "react-day-picker";
-import { flatMap, filter, map } from "lodash";
-import { formatDate, listOfBusinessDaysBetweenDates } from "utils/dates";
+import {requestsDaysListForLeaveTypeId} from "utils/requests";
 
-const filterRequests = leaveTypeId => requests =>
-  requests.filter(
-    request =>
-      request.requestTypeId === leaveTypeId && request.requestStatusId === 1
-  );
-
-const daysListForRequest = request =>
-  map(
-    listOfBusinessDaysBetweenDates(request.startDate, request.endDate),
-    date => new Date(formatDate(date))
-  );
-
-const requestsDaysListForLeaveTypeId = (requests, leaveTypeId) => {
-  const requestFilter = filterRequests(leaveTypeId);
-
-  return flatMap(requestFilter(requests), request =>
-    daysListForRequest(request)
-  );
-};
 const ColoredLeaveCalendar = ({
   numberOfMonths,
   year,
