@@ -18,7 +18,7 @@ class DialogPopup extends Component {
     const {children, title, buttonStyle} = this.props;
     return (
       <div className="dialog-popup">
-        <Button style = {buttonStyle} onClick={this.handleInfoOpen}>Available desks</Button>
+        <Button style={buttonStyle} onClick={this.handleInfoOpen}>Available desks</Button>
         <Dialog open={this.state.activeDialog} onClose={this.handleInfoClose}>
           <DialogTitle>
             {title}
