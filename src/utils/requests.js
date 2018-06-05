@@ -16,6 +16,7 @@ const filterRequestsByLeaveTypeId = leaveTypeId => requests =>
   );
 const filterRequestsByRequestStatusId = requestStatusId => requests =>
   filter(requests, request => request.requestStatusId === requestStatusId);
+
 const filterRequestsByDate = (date, requests) =>
   filter(
     requests,

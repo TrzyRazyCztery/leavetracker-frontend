@@ -19,3 +19,5 @@ export const listOfBusinessDaysBetweenDates = (startDate, endDate) =>
   );
 
 export const formatDate = date => moment(date).format(APPLICATION_DATE_FORMAT);
+
+export const compareDays = (day1, day2) => (formatDate(day1) === formatDate(day2));

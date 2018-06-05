@@ -1,11 +1,11 @@
 import React from 'react'
-import { APPLICATION_DATE_FORMAT } from "utils/dates";
+import { formatDate } from "utils/dates";
 
 const DeskAvailabilityBarDate = ({day}) => (
   <div>
     <div className="day-name">{day.format(`dddd`)}</div>
     <div className="day-date">
-      {day.format(`${APPLICATION_DATE_FORMAT}`)}
+      {day.format(`${formatDate(day)}`)}
     </div>
   </div>
 );
